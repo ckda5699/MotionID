@@ -1,4 +1,4 @@
-# Motion ID — One-Shot Setup (Windows / PowerShell)
+# Motion ID - One-Shot Setup (Windows / PowerShell)
 #
 # Run from the repo root:
 #   .\setup.ps1
@@ -39,7 +39,7 @@ try {
     $pyVer = python --version
     Write-Ok "$pyVer"
 } catch {
-    Write-Warn "Python not found — pipeline scripts will not work. Install from https://python.org (3.12+)"
+    Write-Warn "Python not found - pipeline scripts will not work. Install from https://python.org (3.12+)"
     $skipPython = $true
 }
 
@@ -47,7 +47,7 @@ try {
     $awsVer = aws --version
     Write-Ok "$awsVer"
 } catch {
-    Write-Warn "AWS CLI not found — deployment scripts will not work. Install from https://aws.amazon.com/cli/"
+    Write-Warn "AWS CLI not found - deployment scripts will not work. Install from https://aws.amazon.com/cli/"
 }
 
 # ── 2. Install Node dependencies ──────────────────────────────────────────────
@@ -68,7 +68,7 @@ if (-not $skipPython) {
         python -m venv $venvPath
         Write-Ok ".venv created at $venvPath"
     } else {
-        Write-Ok ".venv already exists — skipping creation"
+        Write-Ok ".venv already exists - skipping creation"
     }
 
     $reqPath = Join-Path $repoRoot "pipeline\requirements.txt"
@@ -77,7 +77,7 @@ if (-not $skipPython) {
         & "$venvPath\Scripts\pip.exe" install -r $reqPath
         Write-Ok "Pipeline dependencies installed"
     } else {
-        Write-Warn "pipeline\requirements.txt not found — skipping Python deps"
+        Write-Warn "pipeline\requirements.txt not found - skipping Python deps"
     }
 }
 
@@ -90,7 +90,7 @@ if (-not (Test-Path $rootEnv)) {
     Copy-Item $rootEnvExample $rootEnv
     Write-Ok "Copied .env.example -> .env (root)"
 } else {
-    Write-Ok ".env (root) already exists — not overwriting"
+    Write-Ok ".env (root) already exists - not overwriting"
 }
 
 $appEnv = Join-Path $repoRoot "app\.env"
@@ -99,7 +99,7 @@ if (-not (Test-Path $appEnv)) {
     Copy-Item $appEnvExample $appEnv
     Write-Ok "Copied app/.env.example -> app/.env"
 } else {
-    Write-Ok "app/.env already exists — not overwriting"
+    Write-Ok "app/.env already exists - not overwriting"
 }
 
 # ── 5. Done ───────────────────────────────────────────────────────────────────
