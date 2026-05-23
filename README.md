@@ -2,9 +2,6 @@
 
 > **Can fans recognize their favorite Bundesliga stars from 3D movement alone?**
 
-> [!IMPORTANT]
-> **Jury Evaluation Note**: There is no need to clone, simulate, or run this repository locally to evaluate the solution. The fully functioning application is hosted live and can be accessed directly at the **[Staging URL](https://staging.d2atp4d3qd2js3.amplifyapp.com)**.
-
 **Bundesliga Motion ID** is an interactive, mobile-first PWA quiz game built for the **AWS World Sports Innovation Cup 2026** under the challenge track **"Unlock the Power of 3D Football Data in the Bundesliga"** ([Challenge Track Details](https://builder.aws.com/content/3BR0ILlG1SlZv07fXdwgPF1pxZ0/join-the-aws-world-sports-innovation-cup-transform-sports-with-your-innovation)).
 
 By stripping away player names, jersey numbers, faces, team shirts, and broadcast video, the platform isolates **3D body skeletal mechanics** (sprint posture, body angles, deceleration, scanning rhythm, and shooting shapes) to challenge and gamify the fan experience.
@@ -14,7 +11,14 @@ By stripping away player names, jersey numbers, faces, team shirts, and broadcas
 * 👤 **Hadi Sotudeh** — [LinkedIn](https://www.linkedin.com/in/hadisotudeh/)
 * 👤 **Steffen Lang** — [LinkedIn](https://www.linkedin.com/in/steffenlang2/)
 
-* **Staging URL**: [https://staging.d2atp4d3qd2js3.amplifyapp.com](https://staging.d2atp4d3qd2js3.amplifyapp.com)
+---
+
+> [!IMPORTANT]
+> **Jury Evaluation Note**
+> There is no need to clone, simulate, or run this repository locally to evaluate the solution. The fully functioning application is hosted live and can be accessed directly at the **[Staging URL](https://staging.d2atp4d3qd2js3.amplifyapp.com)**.
+
+### Quick Links
+* **Live Staging URL**: [https://staging.d2atp4d3qd2js3.amplifyapp.com](https://staging.d2atp4d3qd2js3.amplifyapp.com)
 * **Detailed Local Setup**: See the [Local Setup Guide](docs/setup-guide.md)
 * **AWS Serverless Pipeline**: See the [Future AWS Production Spec](docs/future-aws-pipeline.md)
 * **Bundesliga Data Guide**: See the [Challenge 2 Data Guide](docs/data-guide.md)
