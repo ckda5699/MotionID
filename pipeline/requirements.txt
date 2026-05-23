@@ -1,0 +1,24 @@
+# Motion ID — Pipeline Python Dependencies
+#
+# Install with:
+#   pip install -r requirements.txt
+# Or via setup.ps1 which creates .venv automatically.
+#
+# These are required for data processing and video rendering scripts.
+# The browser app (app/) does NOT use these — it is Node/Vite only.
+
+pyarrow>=14.0
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+
+# Video rendering (required for scripts/ render engines)
+imageio>=2.33.0
+imageio-ffmpeg>=0.4.9
+
+# HTTP / data ingestion
+requests>=2.31
+
+# Parquet / file utilities
+fastparquet>=2023.10
+

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bundesliga Motion ID">
+  <rect width="512" height="512" rx="108" fill="#050505"/>
+  <path d="M88 112h132c18 0 32 14 32 32v44c0 18-14 32-32 32H88z" fill="#e30613"/>
+  <path d="M119 184c31-5 54-21 70-48 6 31 19 58 39 80-38-7-74-18-109-32z" fill="#fff"/>
+  <path d="M88 276h74v32h-74zm0 54h142v32H88zm0 54h142v32H88z" fill="#fff"/>
+  <path d="M274 146h86m-43-43v86m0 0 66 55m-66-55-70 56m136-1 38 88m-174-87-35 91m105-147 1 101m0 0-50 86m50-86 61 87" fill="none" stroke="#b7ff2a" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#33d6ff">
+    <circle cx="317" cy="103" r="18"/><circle cx="274" cy="146" r="18"/><circle cx="360" cy="146" r="18"/>
+    <circle cx="317" cy="189" r="19"/><circle cx="247" cy="245" r="16"/><circle cx="383" cy="244" r="16"/>
+    <circle cx="318" cy="290" r="18"/><circle cx="268" cy="376" r="16"/><circle cx="379" cy="377" r="16"/>
+  </g>
+  <circle cx="421" cy="332" r="23" fill="#fff"/>
+</svg>

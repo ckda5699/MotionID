@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "luis-diaz",
+    "title": "Luis D\u00edaz",
+    "status": "no_image",
+    "sourcePage": "https://en.wikipedia.org/wiki/Luis_D%C3%ADaz"
+  },
+  {
+    "slug": "harry-kane",
+    "title": "Harry Kane",
+    "status": "downloaded",
+    "localPath": "/media/players/harry-kane.jpg",
+    "sourcePage": "https://en.wikipedia.org/wiki/Harry_Kane",
+    "imageSource": "https://upload.wikimedia.org/wikipedia/commons/9/91/Harry_Kane_on_October_10%2C_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "note": "Review Wikimedia/Wikipedia source license and attribution before public production use."
+  },
+  {
+    "slug": "serge-gnabry",
+    "title": "Serge Gnabry",
+    "status": "downloaded",
+    "localPath": "/media/players/serge-gnabry.jpg",
+    "sourcePage": "https://en.wikipedia.org/wiki/Serge_Gnabry",
+    "imageSource": "https://upload.wikimedia.org/wikipedia/commons/5/55/Serge_Gnabry_WC2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "note": "Review Wikimedia/Wikipedia source license and attribution before public production use."
+  },
+  {
+    "slug": "aleksandar-pavlovic",
+    "title": "Aleksandar Pavlovi\u0107",
+    "status": "no_image",
+    "sourcePage": "https://en.wikipedia.org/wiki/Aleksandar_Pavlovi%C4%87"
+  },
+  {
+    "slug": "maximilian-beier",
+    "title": "Maximilian Beier",
+    "status": "downloaded",
+    "localPath": "/media/players/maximilian-beier.jpg",
+    "sourcePage": "https://en.wikipedia.org/wiki/Maximilian_Beier",
+    "imageSource": "https://upload.wikimedia.org/wikipedia/commons/8/89/Maximilian_Beier_training_with_Borussia_Dortmund_%282026%29.jpg",
+    "note": "Review Wikimedia/Wikipedia source license and attribution before public production use."
+  },
+  {
+    "slug": "karim-adeyemi",
+    "title": "Karim Adeyemi",
+    "status": "downloaded",
+    "localPath": "/media/players/karim-adeyemi.jpg",
+    "sourcePage": "https://en.wikipedia.org/wiki/Karim_Adeyemi",
+    "imageSource": "https://upload.wikimedia.org/wikipedia/commons/d/da/FC_Salzburg_gegen_FC_Bayern_M%C3%BCnchen_%28Championsleague_Achtelfinale_Hinspiel_16._Februar_2022%29_63.jpg",
+    "note": "Review Wikimedia/Wikipedia source license and attribution before public production use."
+  },
+  {
+    "slug": "deniz-undav",
+    "title": "Deniz Undav",
+    "status": "downloaded",
+    "localPath": "/media/players/deniz-undav.jpg",
+    "sourcePage": "https://en.wikipedia.org/wiki/Deniz_Undav",
+    "imageSource": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Deniz_undav.jpg",
+    "note": "Review Wikimedia/Wikipedia source license and attribution before public production use."
+  },
+  {
+    "slug": "ilyas-ansah",
+    "title": "Ilyas Ansah",
+    "status": "no_image",
+    "sourcePage": "https://en.wikipedia.org/wiki/Ilyas_Ansah"
+  },
+  {
+    "slug": "oliver-burke",
+    "title": "Oliver Burke",
+    "status": "error: HTTP Error 429: Too many requests (f061ab2)"
+  }
+]

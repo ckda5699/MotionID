@@ -1,0 +1,42 @@
+[
+  {
+    "sourceKey": "Bayern_Hamburg_goal_01",
+    "match": "Bayern vs Hamburg",
+    "title": "Goal 1",
+    "playerName": "Serge Gnabry",
+    "goalVideo": "goals/Bayern_Hamburg_goal_01.mp4",
+    "highlightVideo": "highlights/Bayern_Hamburg_goal_01.mp4"
+  },
+  {
+    "sourceKey": "Bayern_Hamburg_goal_02",
+    "match": "Bayern vs Hamburg",
+    "title": "Goal 2",
+    "playerName": "Aleksandar Pavlovic",
+    "goalVideo": "goals/Bayern_Hamburg_goal_02.mp4",
+    "highlightVideo": "highlights/Bayern_Hamburg_goal_02.mp4"
+  },
+  {
+    "sourceKey": "Frankfurt_Bayern_goal_01",
+    "match": "Frankfurt vs Bayern",
+    "title": "Goal 1",
+    "playerName": "Luis Diaz",
+    "goalVideo": "goals/Frankfurt_Bayern_goal_01.mp4",
+    "highlightVideo": "highlights/Frankfurt_Bayern_goal_01.mp4"
+  },
+  {
+    "sourceKey": "Frankfurt_Bayern_goal_03",
+    "match": "Frankfurt vs Bayern",
+    "title": "Goal 3",
+    "playerName": "Luis Diaz",
+    "goalVideo": "goals/Frankfurt_Bayern_goal_03.mp4",
+    "highlightVideo": "highlights/Frankfurt_Bayern_goal_03.mp4"
+  },
+  {
+    "sourceKey": "Union_Bayern_goal_04",
+    "match": "Union vs Bayern",
+    "title": "Goal 4",
+    "playerName": "Harry Kane",
+    "goalVideo": "goals/Union_Bayern_goal_04.mp4",
+    "highlightVideo": "highlights/Union_Bayern_goal_04.mp4"
+  }
+]

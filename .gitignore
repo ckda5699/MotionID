@@ -1,0 +1,48 @@
+# ── Node ──────────────────────────────────────────────────────────────────────
+app/node_modules/
+app/dist/
+app/.vite/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ── Build / deploy artefacts ──────────────────────────────────────────────────
+.deploy/
+app/.last-amplify-deployment.json
+*.zip
+
+# ── Secrets ───────────────────────────────────────────────────────────────────
+.env
+app/.env
+# keep .env.example files — they are documentation, not secrets
+
+# ── Large media — goal & highlight clips (serve locally or from S3) ───────────
+app/public/media/goals/*.mp4
+app/public/media/highlights/*.mp4
+# Folder structure is kept via .gitkeep; see each folder's README.md
+
+# ── Large news/goals thumbnails — serve locally or from S3 ───────────────────
+app/public/media/news-and-goals/top_stories/*.jpg
+app/public/media/news-and-goals/top_stories/*.jpeg
+app/public/media/news-and-goals/top_stories/*.png
+app/public/media/news-and-goals/clubs/
+
+# ── Raw match data (20 GB parquet/XML — never committed) ─────────────────────
+/data/
+outputs/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── OS / IDE ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo

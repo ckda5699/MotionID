@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "generatedBy": "scripts/prepare_motion_id_content.py",
+  "mediaStrategy": "three-local-fallbacks-plus-optional-s3",
+  "goals": [
+    {
+      "id": "Bayern_Hamburg_goal_01",
+      "match": "Bayern_Hamburg",
+      "goalNumber": 1,
+      "localUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Bayern_Hamburg_goal_02",
+      "match": "Bayern_Hamburg",
+      "goalNumber": 2,
+      "localUrl": "/media/goals/Bayern_Hamburg_goal_02.mp4",
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Frankfurt_Bayern_goal_01",
+      "match": "Frankfurt_Bayern",
+      "goalNumber": 1,
+      "localUrl": "/media/goals/Frankfurt_Bayern_goal_01.mp4",
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Bayern_Hamburg_goal_04",
+      "match": "Bayern_Hamburg",
+      "goalNumber": 4,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Dortmund_Stuttgart_goal_01",
+      "match": "Dortmund_Stuttgart",
+      "goalNumber": 1,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Dortmund_Stuttgart_goal_04",
+      "match": "Dortmund_Stuttgart",
+      "goalNumber": 4,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Dortmund_Stuttgart_goal_05",
+      "match": "Dortmund_Stuttgart",
+      "goalNumber": 5,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Frankfurt_Bayern_goal_02",
+      "match": "Frankfurt_Bayern",
+      "goalNumber": 2,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Frankfurt_Bayern_goal_03",
+      "match": "Frankfurt_Bayern",
+      "goalNumber": 3,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Frankfurt_Union_goal_01",
+      "match": "Frankfurt_Union",
+      "goalNumber": 1,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Frankfurt_Union_goal_05",
+      "match": "Frankfurt_Union",
+      "goalNumber": 5,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Union_Bayern_goal_02",
+      "match": "Union_Bayern",
+      "goalNumber": 2,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    },
+    {
+      "id": "Union_Bayern_goal_04",
+      "match": "Union_Bayern",
+      "goalNumber": 4,
+      "localUrl": null,
+      "remoteUrl": null,
+      "fallbackUrl": "/media/goals/Bayern_Hamburg_goal_01.mp4",
+      "stageWindows": {
+        "1": {
+          "start": 5,
+          "end": 11
+        },
+        "2": {
+          "start": 0,
+          "end": 11
+        },
+        "3": {
+          "start": 0,
+          "end": 15
+        }
+      }
+    }
+  ]
+}

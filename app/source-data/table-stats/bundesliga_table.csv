@@ -1,0 +1,19 @@
+Rank,Club Name,Club ID,Club Slug,Club Logo URL,Played,Wins,Draws,Losses,Goals For,Goals Against,Goal Difference,Points,Qualification,Tendency
+1,FC Bayern München,DFL-CLU-00000G,fc-bayern-muenchen,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000G.svg,34,28,5,1,122,36,86,89,UEFA_CHAMPIONS_LEAGUE,STABLE
+2,Borussia Dortmund,DFL-CLU-000007,borussia-dortmund,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000007.svg,34,22,7,5,70,34,36,73,UEFA_CHAMPIONS_LEAGUE,STABLE
+3,RB Leipzig,DFL-CLU-000017,rb-leipzig,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000017.svg,34,20,5,9,66,47,19,65,UEFA_CHAMPIONS_LEAGUE,STABLE
+4,VfB Stuttgart,DFL-CLU-00000D,vfb-stuttgart,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000D.svg,34,18,8,8,71,49,22,62,UEFA_CHAMPIONS_LEAGUE,STABLE
+5,TSG Hoffenheim,DFL-CLU-000002,tsg-hoffenheim,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000002.svg,34,18,7,9,65,52,13,61,UEFA_EUROPA_LEAGUE,STABLE
+6,Bayer 04 Leverkusen,DFL-CLU-00000B,bayer-04-leverkusen,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000B.svg,34,17,8,9,68,47,21,59,UEFA_EUROPA_LEAGUE,STABLE
+7,Sport-Club Freiburg,DFL-CLU-00000A,sport-club-freiburg,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000A.svg,34,13,8,13,51,57,-6,47,UEFA_EUROPA_LEAGUE_QUALIFICATION,STABLE
+8,Eintracht Frankfurt,DFL-CLU-00000F,eintracht-frankfurt,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000F.svg,34,11,11,12,61,65,-4,44,NONE,STABLE
+9,FC Augsburg,DFL-CLU-000010,fc-augsburg,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000010.svg,34,12,7,15,45,61,-16,43,NONE,STABLE
+10,1. FSV Mainz 05,DFL-CLU-000006,1-fsv-mainz-05,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000006.svg,34,10,10,14,44,53,-9,40,NONE,STABLE
+11,1. FC Union Berlin,DFL-CLU-00000V,1-fc-union-berlin,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000V.svg,34,10,9,15,44,58,-14,39,NONE,UP
+12,Borussia Mönchengladbach,DFL-CLU-000004,borussia-moenchengladbach,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000004.svg,34,9,11,14,42,53,-11,38,NONE,UP
+13,Hamburger SV,DFL-CLU-00000C,hamburger-sv,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000C.svg,34,9,11,14,40,54,-14,38,NONE,DOWN
+14,1. FC Köln,DFL-CLU-000008,1-fc-koeln,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000008.svg,34,7,11,16,49,63,-14,32,NONE,STABLE
+15,SV Werder Bremen,DFL-CLU-00000E,sv-werder-bremen,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000E.svg,34,8,8,18,37,60,-23,32,NONE,STABLE
+16,VfL Wolfsburg,DFL-CLU-000003,vfl-wolfsburg,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000003.svg,34,7,8,19,45,69,-24,29,PLAY_OFF,STABLE
+17,1. FC Heidenheim 1846,DFL-CLU-000018,1-fc-heidenheim-1846,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-000018.svg,34,6,8,20,41,72,-31,26,RELEGATION,STABLE
+18,FC St. Pauli,DFL-CLU-00000H,fc-st-pauli,https://assets.bundesliga.com/clublogos/DFL-SEA-0001K9/DFL-CLU-00000H.svg,34,6,8,20,29,60,-31,26,RELEGATION,STABLE
