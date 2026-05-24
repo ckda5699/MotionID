@@ -167,13 +167,18 @@ motion-id/
 ├── infra/                  ← Infrastructure specifications (future AWS spec outlines)
 │   └── README.md
 │
-├── scripts/                ← Standalone rendering & packaging engine
+├── scripts/                ← Standalone rendering, packaging & signature analysis engine
 │   ├── build_goal_data.py  ← Slices raw match Parquets into compact JSON/parquet goals
 │   ├── render_no_repair_video.py  ← Renders 3D skeleton videos (raw ball)
-│   └── render_repair_video.py     ← Renders 3D skeleton videos (repaired ball)
+│   ├── render_repair_video.py     ← Renders 3D skeleton videos (repaired ball)
+│   ├── signature_scene_selection.ipynb ← Automated scene selection notebook for player signatures
+│   └── signature_scene_outputs/   ← Generated PCA previews, outliers, and player signature MP4s
+│       ├── interactive_pca_signature_scenes.html
+│       ├── outliers/
+│       └── player_signature_animations/
 │
 ├── setup.ps1               ← One-shot PowerShell installer (Windows)
-│   └── .env.example        ← Root environment template
+├── .env.example            ← Root environment template
 └── .gitignore
 ```
 
@@ -222,3 +227,9 @@ npm run dev
 
 For detailed instructions on rendering videos locally from tracking parquets, configuring media buckets, or deploying builds to AWS, check the [Setup & Local Development Guide](docs/setup-guide.md).
 
+---
+
+## 8. Automated Scene Selection
+
+The [signature scene selection notebook](scripts/signature_scene_selection.ipynb) automatically mines synced 3D skeleton data for repeatable, player-specific scenes and scores them by distinctiveness, repeatability, and motion energy to compute player signatures.
+It renders the top-ranked MP4s and PCA review output under [scripts/signature_scene_outputs/](scripts/signature_scene_outputs/) so the selected signature scenes can be inspected before being used in Motion ID.
