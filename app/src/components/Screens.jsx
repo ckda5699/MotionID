@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { games, leaderboardTabs, localHighlightVideos, matchRows, modes, movementMetrics, players, stages, user } from "../data/appData.js";
 import { clubNewsGoalCards, topStoryCards } from "../data/newsGoalsData.js";
 import { bundesligaClubs, bundesligaPlayers, bundesligaTable } from "../data/tableStatsData.js";
@@ -771,6 +771,19 @@ export function QuizScreen({ game, onComplete, onQuit }) {
     onComplete(result);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.shiftKey && event.key === "Enter") {
+        if (lockedResultRef.current) {
+          event.preventDefault();
+          finishRound();
+        }
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const countdownText = phase === "countdown" ? getCountdownText(phaseRemaining) : "";
   const phaseLabel = phase === "answerGrace" ? "Answer window" : phase === "playing" ? "Watch clip" : phase === "countdown" ? "Get ready" : "Complete";
 
@@ -793,7 +806,15 @@ export function QuizScreen({ game, onComplete, onQuit }) {
       <div className="prompt-block"><h2 id="round-prompt">Who is the red player?</h2><p>{stage.microcopy}</p></div>
       {stage.cues.length ? <CuePanel stage={stage} game={game} /> : null}
       <AnswerBar value={lockedResult?.submittedAnswer ?? answer} locked={Boolean(lockedResult)} onChange={setAnswer} onLock={lockAnswer} suggestions={answerSuggestions} />
-      <p className="round-footnote">{lockedResult ? "Answer stored. Reveal happens after the shared timed round." : "Timed round. No manual stage skipping, no replay."}</p>
+      {lockedResult ? (
+        <div className="action-row single-action skip-reveal-row desktop-only-skip" style={{ marginTop: '12px', display: 'flex', justifyContent: 'center' }}>
+          <button className="primary-cta skip-reveal-btn" type="button" onClick={finishRound} style={{ background: '#111', border: '1px solid var(--lime)', color: 'var(--lime)' }}>
+            Skip to Reveal <small style={{ opacity: 0.6, marginLeft: '6px', fontSize: '11px' }}>(Shift+Enter)</small>
+          </button>
+        </div>
+      ) : (
+        <p className="round-footnote">Timed round. No manual stage skipping, no replay.</p>
+      )}
     </section>
   );
 }
@@ -923,8 +944,29 @@ export function ResultsScreen({ results, onInsight, onPlayAgain, onLeaderboard }
 
 function SessionGameRow({ result, index }) {
   const player = findPlayerByName(result.correctAnswer);
+  const tablePlayer = player ? findTablePlayerByName(player.name) : null;
+  const photoUrl = tablePlayer?.photoUrl ?? (player ? playerImageMap[player.name] : null);
   const visibleTitle = `Game ${index}`;
-  return <article className="session-row"><small className="session-date">{result.matchDate ?? "Matchday 34 - Sat 16 May 2026"}</small><b>{index}</b><div className="session-thumb"><MediaPoster tone={player?.portraitTone ?? "default"} title={visibleTitle} kicker="Motion ID" compact /></div><div><h3>{visibleTitle}</h3><p>{result.challenge}</p><span>{result.submittedAnswer ? `Answered Stage ${result.answeredStage}` : "Timed out"}</span><strong>{result.isCorrect ? "Correct" : result.sameTeamBonus ? "Team bonus" : "Miss"}</strong></div><em>+{result.pointsEarned}<small>PTS</small></em></article>;
+  return (
+    <article className="session-row">
+      <small className="session-date">{result.matchDate ?? "Matchday 34 - Sat 16 May 2026"}</small>
+      <b>{index}</b>
+      <div className="session-thumb">
+        {photoUrl ? (
+          <img src={photoUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+        ) : (
+          <MediaPoster tone={player?.portraitTone ?? "default"} title={visibleTitle} kicker="Motion ID" compact />
+        )}
+      </div>
+      <div>
+        <h3>{visibleTitle}</h3>
+        <p>{result.challenge}</p>
+        <span>{result.submittedAnswer ? `Answered Stage ${result.answeredStage}` : "Timed out"}</span>
+        <strong>{result.isCorrect ? "Correct" : result.sameTeamBonus ? "Team bonus" : "Miss"}</strong>
+      </div>
+      <em>+{result.pointsEarned}<small>PTS</small></em>
+    </article>
+  );
 }
 
 function FragmentWithSplitter({ showSplitter, children }) {
@@ -1243,7 +1285,7 @@ function ClubDetailScreen({ club, tableRow, activeTab, onTab, onBack, onPlayer }
       <button className="stats-back-button floating" type="button" onClick={onBack}><Icon name="back" /></button>
       <ClubHero club={club} tableRow={tableRow} />
       <TableTabs active={activeTab} tabs={clubTabs} onSelect={onTab} />
-      {activeTab === "News" ? <ClubNewsTab tableRow={tableRow} /> : null}
+      {activeTab === "News" ? <ClubNewsTab tableRow={tableRow} onViewFullTable={onBack} /> : null}
       {activeTab === "Profile" ? <ClubProfileTab club={club} /> : null}
       {activeTab === "Squad" ? <ClubSquadTab slug={club.clubSlug} onPlayer={onPlayer} /> : null}
       {activeTab === "Fixtures" ? <ClubFixturesTab slug={club.clubSlug} /> : null}
@@ -1261,7 +1303,7 @@ function ClubHero({ club, tableRow }) {
   );
 }
 
-function ClubNewsTab({ tableRow }) {
+function ClubNewsTab({ tableRow, onViewFullTable }) {
   const clubContent = clubNewsGoalCards[tableRow.clubSlug] ?? { news: [], goals: [] };
   const goalCards = clubContent.goals.slice(0, 5);
   const newsCards = clubContent.news.slice(0, 5);
@@ -1276,7 +1318,7 @@ function ClubNewsTab({ tableRow }) {
           </div>
         ))}
       </div>
-      <button className="text-link-button" type="button">View full table →</button>
+      <button className="text-link-button" type="button" onClick={onViewFullTable}>View full table →</button>
       <h2>All goals of {cleanText(tableRow.clubName)}</h2>
       <div className="club-card-row">
         {goalCards.map((goal) => (
