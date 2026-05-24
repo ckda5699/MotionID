@@ -11,7 +11,7 @@ export const stageWeights = {
 };
 
 export const stageFloors = {
-  1: 20,
+  1: 80,
   2: 60,
   3: 40,
   4: 20,

@@ -638,6 +638,17 @@ export function QuizScreen({ game, onComplete, onQuit }) {
   const lockedResultRef = useRef(null);
   const phaseTokenRef = useRef(0);
 
+  const answerRef = useRef(answer);
+  const phaseRemainingRef = useRef(phaseRemaining);
+
+  useEffect(() => {
+    answerRef.current = answer;
+  }, [answer]);
+
+  useEffect(() => {
+    phaseRemainingRef.current = phaseRemaining;
+  }, [phaseRemaining]);
+
   useEffect(() => {
     lockedResultRef.current = lockedResult;
   }, [lockedResult]);
@@ -730,6 +741,11 @@ export function QuizScreen({ game, onComplete, onQuit }) {
     });
   }, [phase, stage, stageElapsedSeconds]);
 
+  const currentPossiblePointsRef = useRef(currentPossiblePoints);
+  useEffect(() => {
+    currentPossiblePointsRef.current = currentPossiblePoints;
+  }, [currentPossiblePoints]);
+
   const advancePhase = () => {
     if (phase === "countdown") {
       setPhase("playing");
@@ -774,15 +790,29 @@ export function QuizScreen({ game, onComplete, onQuit }) {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.shiftKey && event.key === "Enter") {
+        event.preventDefault();
         if (lockedResultRef.current) {
-          event.preventDefault();
           finishRound();
+          return;
         }
+
+        const elapsed = Math.max(0, (Date.now() - stageStartRef.current) / 1000);
+        const scoreDuration = getStageDuration(stage) + (stage.answerGraceSeconds ?? 5);
+        const result = scoreRound(answerRef.current, game, stage, {
+          elapsedInStage: elapsed,
+          stageDuration: scoreDuration,
+          remainingSeconds: phaseRemainingRef.current,
+          possiblePointsAtLock: currentPossiblePointsRef.current,
+        });
+
+        completedRef.current = true;
+        setPhase("complete");
+        onComplete(result);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [game.id, stage.id]);
 
   const countdownText = phase === "countdown" ? getCountdownText(phaseRemaining) : "";
   const phaseLabel = phase === "answerGrace" ? "Answer window" : phase === "playing" ? "Watch clip" : phase === "countdown" ? "Get ready" : "Complete";
