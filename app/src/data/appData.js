@@ -3,17 +3,17 @@ import { bundesligaFixtures } from "./bundesligaFixtures.generated.js";
 import localVideoManifest from "./localVideoManifest.json";
 
 export const stageWeights = {
-  1: 1,
+  1: 1.0,
   2: 0.8,
   3: 0.6,
-  4: 0.35,
-  5: 0.15,
+  4: 0.4,
+  5: 0.2,
 };
 
 export const stageFloors = {
-  1: 100,
-  2: 50,
-  3: 30,
+  1: 20,
+  2: 60,
+  3: 40,
   4: 20,
   5: 10,
 };

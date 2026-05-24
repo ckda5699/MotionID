@@ -83,10 +83,10 @@ export function findPlayerByName(name) {
 export function calculateStageScore(stage, timing = {}) {
   const stageDuration = Math.max(1, timing.stageDuration ?? stage.answerGraceSeconds ?? 1);
   const elapsed = Math.max(0, Math.min(stageDuration, timing.elapsedInStage ?? 0));
-  const timeFactor = stage.id === 1 ? 1 : 1 - elapsed / stageDuration;
+  const timeFactor = 1 - elapsed / stageDuration;
   const rawScore = Math.round(100 * (stage.weight ?? 0) * timeFactor);
   const floor = stage.floor ?? 0;
-  return stage.id === 1 ? 100 : Math.max(floor, rawScore);
+  return Math.max(floor, rawScore);
 }
 
 export function scoreRound(answer, game, stage, timing = {}) {

@@ -806,15 +806,7 @@ export function QuizScreen({ game, onComplete, onQuit }) {
       <div className="prompt-block"><h2 id="round-prompt">Who is the red player?</h2><p>{stage.microcopy}</p></div>
       {stage.cues.length ? <CuePanel stage={stage} game={game} /> : null}
       <AnswerBar value={lockedResult?.submittedAnswer ?? answer} locked={Boolean(lockedResult)} onChange={setAnswer} onLock={lockAnswer} suggestions={answerSuggestions} />
-      {lockedResult ? (
-        <div className="action-row single-action skip-reveal-row desktop-only-skip" style={{ marginTop: '12px', display: 'flex', justifyContent: 'center' }}>
-          <button className="primary-cta skip-reveal-btn" type="button" onClick={finishRound} style={{ background: '#111', border: '1px solid var(--lime)', color: 'var(--lime)' }}>
-            Skip to Reveal <small style={{ opacity: 0.6, marginLeft: '6px', fontSize: '11px' }}>(Shift+Enter)</small>
-          </button>
-        </div>
-      ) : (
-        <p className="round-footnote">Timed round. No manual stage skipping, no replay.</p>
-      )}
+      <p className="round-footnote">{lockedResult ? "Answer stored. Reveal happens after the shared timed round." : "Timed round. No manual stage skipping, no replay."}</p>
     </section>
   );
 }
@@ -839,7 +831,7 @@ function CuePanel({ stage, game }) {
   );
 }
 
-export function RevealScreen({ game, result, onNext }) {
+export function RevealScreen({ game, result, isLast, onNext }) {
   const player = findPlayerByName(result?.correctAnswer ?? game.playerName) ?? players[0];
   const [nextSeconds, setNextSeconds] = useState(30);
   const autoStartedRef = useRef(false);
@@ -873,7 +865,12 @@ export function RevealScreen({ game, result, onNext }) {
       <PlayerRevealCard player={player} />
       <div className="media-pair"><ReplayThumb label="Motion ID Clip" game={game} /><ReplayThumb label="Match Highlight Video" game={game} highlight /></div>
       <div className="round-result-grid"><Stat label="Round" value={resultLabel} /><Stat label="Points" value={`+${result?.pointsEarned ?? 0}`} /><Stat label="Locked at" value={result?.submittedAnswer ? `Stage ${result?.answeredStage ?? 1}` : "No answer"} /></div>
-      <div className="action-row single-action"><button className="primary-cta" type="button" onClick={startNextQuiz}>Next Player Quiz starts in <span className="next-game-timer">00:{String(nextSeconds).padStart(2, "0")}</span><Icon name="arrow" /></button></div>
+      <div className="action-row single-action">
+        <button className="primary-cta" type="button" onClick={startNextQuiz}>
+          {isLast ? "Show results" : "Next Player Quiz starts"} in <span className="next-game-timer">00:{String(nextSeconds).padStart(2, "0")}</span>
+          <Icon name="arrow" />
+        </button>
+      </div>
     </section>
   );
 }

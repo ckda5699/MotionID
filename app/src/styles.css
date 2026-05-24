@@ -4367,9 +4367,3 @@ button {
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
-
-@media (max-width: 760px) {
-  .desktop-only-skip {
-    display: none !important;
-  }
-}

@@ -173,7 +173,7 @@ export function App() {
   const nextGame = () => {
     if (lastResult) persistResult(lastResult);
     const nextIndex = nextDemoGameIndex(currentGameIndex);
-    if (sessionResults.length >= localDemoSourceKeys.length) {
+    if (sessionResults.length >= 4) {
       setCurrentScreen("results");
       return;
     }
@@ -208,7 +208,7 @@ export function App() {
     if (currentScreen === "lobby") return <LobbyScreen selectedMode={selectedMode} onPlay={startMode} />;
     if (currentScreen === "liveCountdown") return <LiveChallengeCountdownScreen onBack={() => setCurrentScreen("lobby")} onPlayNow={() => startMode("goals")} />;
     if (currentScreen === "quiz") return <QuizScreen game={currentGame} onQuit={requestQuitGame} onComplete={(result) => { setActiveStage(1); completeRound(result); }} />;
-    if (currentScreen === "reveal") return <RevealScreen game={currentGame} result={lastResult} onNext={nextGame} />;
+    if (currentScreen === "reveal") return <RevealScreen game={currentGame} result={lastResult} isLast={sessionResults.length >= 4} onNext={nextGame} />;
     if (currentScreen === "insight") return <InsightScreen onBack={() => setCurrentScreen("reveal")} />;
     if (currentScreen === "results") return <ResultsScreen results={sessionResults} onInsight={() => setCurrentScreen("insight")} onPlayAgain={playAgain} onLeaderboard={() => setCurrentScreen("leaderboard")} />;
     if (currentScreen === "leaderboard") return <LeaderboardScreen />;
