@@ -7,7 +7,7 @@ This document details the visual stage progression, mathematical scoring formula
 ## 1. Core Gameplay Concepts
 
 ### Matchday Quiz Model (Seasonal Rhythm)
-- **Weekly Matchday Loop**: Motion ID operates as a recurring challenge synced with the official Bundesliga calendar. A new **Matchday Challenge** opens 30 minutes before the weekend's first kick-off and closes after the final whistle.
+- **Weekly Matchday Loop**: Motion ID operates as a recurring challenge synced with the official Bundesliga calendar. A new **Matchday Challenge** opens 30 minutes before the weekend's first kick-off.
 - **Dynamic Content Generation**: Every week, the DFL tracking data pipeline automatically extracts key moments (goals, key dribbles, saves) from live matches, converting them into anonymous 3D skeleton sequences.
 
 ### Future Roadmap: Beyond Munich & Beyond Goals
