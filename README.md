@@ -1,12 +1,71 @@
 # Bundesliga Motion ID - AWS Sports Hackathon
 
-> **Can fans recognize their favorite Bundesliga stars from 3D movement alone?**
+<p align="center">
+  <img src="docs/assets/readme-cover.png" alt="Bundesliga Motion ID Banner" width="100%" />
+</p>
 
-**Bundesliga Motion ID** is an interactive, mobile-first PWA quiz game built for the **AWS World Sports Innovation Cup 2026** under the challenge track **"Unlock the Power of 3D Football Data in the Bundesliga"** ([Challenge Track Details](https://builder.aws.com/content/3BR0ILlG1SlZv07fXdwgPF1pxZ0/join-the-aws-world-sports-innovation-cup-transform-sports-with-your-innovation)).
+<p align="center">
+  <h3><strong>Can fans recognize their favorite Bundesliga stars from 3D movement alone?</strong></h3>
+  <p>An interactive, mobile-first PWA quiz game that transforms raw tracking data into high-engagement fan mechanics, built for the <strong>AWS World Sports Innovation Cup 2026</strong>.</p>
+</p>
 
-By stripping away player names, jersey numbers, faces, team shirts, and broadcast video, the platform isolates **3D body skeletal mechanics** (sprint posture, body angles, deceleration, scanning rhythm, and shooting shapes) to challenge and gamify the fan experience.
+<p align="center">
+  <video src="app/public/media/goals/Bayern_Hamburg_goal_01.mp4" width="100%" style="max-width: 800px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);" autoplay loop muted playsinline></video>
+</p>
 
-### Project Team
+<p align="center">
+  <strong>🧠 Quick Challenge: Can you recognize the red player from this movement alone?</strong>
+</p>
+
+<table align="center" style="border: none; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; width: 100%;">
+  <tr style="border: none;">
+    <td style="border: none; padding: 4px; width: 16.6%;">
+      <details style="border: 1px solid #30363d; border-radius: 8px; background-color: #0d1117; padding: 6px; text-align: center;">
+        <summary style="cursor: pointer; color: #58a6ff; font-weight: bold; list-style: none; outline: none; padding: 2px; font-size: 0.85em;">A: H. Kane</summary>
+        <div style="padding-top: 6px; color: #ff7b72; font-size: 0.8em;">❌ Incorrect</div>
+      </details>
+    </td>
+    <td style="border: none; padding: 4px; width: 16.6%;">
+      <details style="border: 1px solid #30363d; border-radius: 8px; background-color: #0d1117; padding: 6px; text-align: center;">
+        <summary style="cursor: pointer; color: #58a6ff; font-weight: bold; list-style: none; outline: none; padding: 2px; font-size: 0.85em;">B: S. Gnabry</summary>
+        <div style="padding-top: 6px; color: #56d364; font-size: 0.8em;">🎉 Correct!</div>
+      </details>
+    </td>
+    <td style="border: none; padding: 4px; width: 16.6%;">
+      <details style="border: 1px solid #30363d; border-radius: 8px; background-color: #0d1117; padding: 6px; text-align: center;">
+        <summary style="cursor: pointer; color: #58a6ff; font-weight: bold; list-style: none; outline: none; padding: 2px; font-size: 0.85em;">C: J. Musiala</summary>
+        <div style="padding-top: 6px; color: #ff7b72; font-size: 0.8em;">❌ Incorrect</div>
+      </details>
+    </td>
+    <td style="border: none; padding: 4px; width: 16.6%;">
+      <details style="border: 1px solid #30363d; border-radius: 8px; background-color: #0d1117; padding: 6px; text-align: center;">
+        <summary style="cursor: pointer; color: #58a6ff; font-weight: bold; list-style: none; outline: none; padding: 2px; font-size: 0.85em;">D: L. Díaz</summary>
+        <div style="padding-top: 6px; color: #ff7b72; font-size: 0.8em;">❌ Incorrect</div>
+      </details>
+    </td>
+    <td style="border: none; padding: 4px; width: 16.6%;">
+      <details style="border: 1px solid #30363d; border-radius: 8px; background-color: #0d1117; padding: 6px; text-align: center;">
+        <summary style="cursor: pointer; color: #58a6ff; font-weight: bold; list-style: none; outline: none; padding: 2px; font-size: 0.85em;">E: F. Wirtz</summary>
+        <div style="padding-top: 6px; color: #ff7b72; font-size: 0.8em;">❌ Incorrect</div>
+      </details>
+    </td>
+    <td style="border: none; padding: 4px; width: 16.6%;">
+      <details style="border: 1px solid #30363d; border-radius: 8px; background-color: #0d1117; padding: 6px; text-align: center;">
+        <summary style="cursor: pointer; color: #58a6ff; font-weight: bold; list-style: none; outline: none; padding: 2px; font-size: 0.85em;">F: L. Sané</summary>
+        <div style="padding-top: 6px; color: #ff7b72; font-size: 0.8em;">❌ Incorrect</div>
+      </details>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="https://staging.d2atp4d3qd2js3.amplifyapp.com"><strong>Play the live game to test your skills on more players! ➡️</strong></a>
+</p>
+
+---
+
+### 👥 Project Team (21 Joints) <img src="docs/assets/team_logo.png" alt="21 Joints" height="24" style="vertical-align: middle; margin-left: 8px; border-radius: 4px;" />
+
 * 👤 **Chandan Das Adhikari** — [LinkedIn](https://www.linkedin.com/in/chandan5699/)
 * 👤 **Hadi Sotudeh** — [LinkedIn](https://www.linkedin.com/in/hadisotudeh/)
 * 👤 **Steffen Lang** — [LinkedIn](https://www.linkedin.com/in/steffenlang2/)
@@ -26,33 +85,42 @@ By stripping away player names, jersey numbers, faces, team shirts, and broadcas
 
 ---
 
-## 1. Project Concept & Pitch
+## 🚀 The Pitch: Gamifying 3D Biometrics
 
-### The Challenge
-DFL / Bundesliga Challenge 2 requests teams to unlock the value of 3D skeletal tracking data (21 keypoints tracked at 50 Hz) beyond ordinary automated event logging.
+DFL and the Bundesliga capture high-fidelity 3D skeletal tracking data (21 keypoints at 50 Hz) for every player on the pitch. While this data is normally locked inside technical coaching dashboards, **Bundesliga Motion ID** unlocks it for millions of fans worldwide.
 
-### The Solution: A Recurring Matchday Cycle
-Instead of keeping 3D tracking data locked inside coaching dashboards, **Motion ID** translates raw skeletal tracking parquets into dynamic, anonymized 3D replay challenges. 
+By stripping away jersey numbers, player faces, team shirts, and broadcast video, we isolate **pure biomechanical motion signatures**—the pelvic tilt of a dribble, the shoulder roll before a strike, or the backswing of a kick. 
 
-The game is structured as a **recurring Matchday Quiz**. Syncing with the official Bundesliga calendar, a new quiz pack is released every single matchday. This creates a repeating seasonal loop that keeps fans engaged week after week, prompting them to identify key movements that occurred on the pitch during the latest round of live fixtures.
+### Why This Idea Wins:
+1. **The Recurring Matchday Cycle (Seasonal Fan Loop)**:
+   This is not a one-off trivia game. **Motion ID repeats every single matchday**. Synced with the live Bundesliga schedule, a new challenge pack drops 30 minutes before kick-off, challenging fans to identify the signature moments that happened on the pitch just hours before. It forms a recurring habit loop, bringing fans back week after week.
+2. **Infinite Scalability (Beyond Bayern, Beyond Goals)**:
+   While our stable prototype showcases Harry Kane, Serge Gnabry, and Luis Díaz, the production engine handles tracking parquets from **all 18 Bundesliga clubs**. Furthermore, the game is designed to expand beyond goals into:
+   - **Elite Dribbles & Skills**: Spotting wingers by their stride rate and body orientation.
+   - **Last-Ditch Slide Tackles**: Reading defender lunging angles.
+   - **Goalkeeper Saves**: Identifying shot-stoppers based on body extension and recovery time.
+   - **Tactical Team Plays**: Guessing clubs based on passing shapes and defensive line movements.
+3. **Cognitive Science Backing**:
+   Built on the established psychological science of **Point-Light Displays (PLD)**, Motion ID gamifies the "muscle memory" of passionate football fans. Obsessive supporters don't just recognize a player by their shirt; they recognize them by their gait, stride, and body language. We prove that fans can read these biomechanical signatures in milliseconds.
+
+---
+
+## 📊 Gameplay & Scoring Mechanics
 
 Each matchday challenge consists of 4 sequential player guessing rounds. Fans watch each play sequence build up across 5 progressive stages of information reveal:
 1. **Stage 1 (Main Action)**: The final 5 seconds before the event. Only the anonymized player skeleton, the ball trajectory, and the immediate surroundings (goalpost outlines) are shown. (Max 100 points, Floor 80).
 2. **Stage 2 (Buildup)**: Adds the run-up, cross, or carry leading to the action. (Max 80 points, Floor 60).
 3. **Stage 3 (Aftermath)**: Adds the landing, follow-through, and celebration signature. (Max 60 points, Floor 40).
 4. **Stage 4 (Soft Clues)**: Overlays weak identification stats (e.g. playing position group, height, age, season-level statistics). (Max 40 points, Floor 20).
-5. **Stage 5 (Hard Clues)**: Overlays strong identification hints (e.g. nationality, jersey number, current club). (Max 20 points, Floor 10).
+5. **Stage 5 (Hard Clues)**: Overlays strong identification hints (e.g. nationality, jersey number, current club). (Max 20 points, Floor 0).
 
-The scoring model rewards early recognition through a time-decay function. Committing to a guess in Stage 1 yields up to 100 points, whereas waiting until Stage 5 decays the potential points to a floor of 10 points. Fans are encouraged to read the biomechanical "signature" of the player as early as possible. If an incorrect guess is made in Stages 1–4, a **Same-Team Bonus (+5 points)** is awarded if the guessed player is from the same club as the target player.
+The scoring model rewards early recognition through a time-decay function. Committing to a guess in Stage 1 yields up to 100 points, whereas waiting until Stage 5 decays the potential points to a floor of 0 points. Fans are encouraged to read the biomechanical "signature" of the player as early as possible. If an incorrect guess is made in Stages 1–4, a **Same-Team Bonus (+5 points)** is awarded if the guessed player is from the same club as the target player.
 
-### Product Scope & Future Roadmap
-* **Weekly Matchday Loop**: Motion ID is designed as a recurring weekly event. A new Matchday Challenge opens synced with the weekend fixtures, automatically populated by tracking data processed through our AWS serverless pipeline.
-* **All 18 Bundesliga Clubs**: While the initial prototype highlights Bayern Munich, Borussia Dortmund, and Union Berlin for demonstration stability, the pipeline is built to handle tracking datasets from all 18 Bundesliga clubs. 
-* **Beyond Goals**: The tracking data pipeline is built to process diverse action sequences beyond goals. Future matchday packs will challenge fans to recognize:
-  - **Key Dribbles & Skills**: Elite wingers identified by their body rolls, acceleration bursts, and stride patterns.
-  - **Defensive Tackles & Blocks**: Center-backs recognized by their lunging angles and block timings.
-  - **Goalkeeper Saves**: Shot-stoppers identified by diving extension, recovery time, and physical stature.
-  - **Tactical Team Shapes**: Guessing the team based on spatial passing webs and defensive lines.
+For the complete mathematical details of the decay logic, stage timelines, and same-team bonus calculations, refer to the [Complete Game Mechanics & Scoring Specification](docs/game-mechanics.md).
+
+---
+
+## 🧠 Scientific & Biomechanical Foundation
 
 ### Scientific Backing: The Cognitive Science of Biological Motion
 Motion ID is grounded in established cognitive psychology. In 1973, psychologist **Gunnar Johansson** introduced **Point-Light Displays (PLD)**, proving that humans possess an extraordinary ability to recognize biological motion from just 10-12 moving joint coordinates. Even without faces, shirts, or colors:
@@ -70,7 +138,7 @@ Current research extends these principles to automated athlete tracking and iden
 
 ---
 
-## 2. Current Architecture & Deployment
+## 🏗️ Current Architecture & Local-First Strategy
 
 The prototype is built as a responsive Single Page Application (React + Vite) designed to run as a mobile PWA.
 
@@ -109,7 +177,7 @@ graph LR
 
 ---
 
-## 3. Technical Features of the Video Generation Pipeline
+## 📹 Video Generation & Repair Pipeline
 
 To convert raw 3D tracking parquets into lightweight, mobile-friendly MP4s, the Motion ID engine implements several key post-processing steps:
 
@@ -120,7 +188,7 @@ To convert raw 3D tracking parquets into lightweight, mobile-friendly MP4s, the 
 
 ---
 
-## 4. Future Production AWS Pipeline
+## ☁️ Future Production AWS Serverless Pipeline
 
 For production scale, rendering is moved fully to a serverless AWS ingestion pipeline. Parquet files are never loaded in the browser; instead, they are converted asynchronously to lightweight MP4 and JSON quiz assets.
 
@@ -158,7 +226,7 @@ See the [Future AWS Production Spec](docs/future-aws-pipeline.md) for detailed c
 
 ---
 
-## 5. Repository Structure
+## 📂 Repository Structure
 
 ```
 motion-id/
@@ -197,7 +265,7 @@ motion-id/
 
 ---
 
-## 6. Environment Separation & Data Configurations
+## ⚙️ Environment Separation & Data Configurations
 
 The repository operates on a clear dual-environment structure to keep the user-facing runtime app lightweight and performant:
 
@@ -212,7 +280,7 @@ To run the offline video rendering scripts (`scripts/render_no_repair_video.py` 
 
 ---
 
-## 7. Quick Local Start (Windows)
+## 💻 Quick Local Start (Windows)
 
 Get the app running locally on your Windows developer machine in two steps.
 
@@ -242,7 +310,8 @@ For detailed instructions on rendering videos locally from tracking parquets, co
 
 ---
 
-## 8. Automated Scene Selection
+## 🤖 Automated PCA Scene Selection
 
 The [signature scene selection notebook](scripts/signature_scene_selection.ipynb) automatically mines synced 3D skeleton data for repeatable, player-specific scenes and scores them by distinctiveness, repeatability, and motion energy to compute player signatures.
 It renders the top-ranked MP4s and PCA review output under [scripts/signature_scene_outputs/](scripts/signature_scene_outputs/) so the selected signature scenes can be inspected before being used in Motion ID.
+

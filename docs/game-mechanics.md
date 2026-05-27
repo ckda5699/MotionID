@@ -41,7 +41,7 @@ Each player challenge is split into 5 progressive stages. Information increases 
 | **Stage 2** | Motion | 0s - 11s | **Buildup + Action**: Adds the run-up, cross, or carry leading up to the main action. | 80 | 60 |
 | **Stage 3** | Motion | 0s - 15s | **Full Clip**: Adds the immediate aftermath, landing posture, and characteristic celebration shapes. | 60 | 40 |
 | **Stage 4** | Info | 0s - 15s | **First Identity Cues (Soft Clues)**: Overlays physical metrics: Playing position, Height, Max Speed, Matches Played, and Shots on Target. | 40 | 20 |
-| **Stage 5** | Info | 0s - 15s | **Stronger Identity Cues (Hard Clues)**: Overlays explicit details: Nationality, Club name, Jersey number, season Goals & Assists, and Age. | 20 | 10 |
+| **Stage 5** | Info | 0s - 15s | **Stronger Identity Cues (Hard Clues)**: Overlays explicit details: Nationality, Club name, Jersey number, season Goals & Assists, and Age. | 20 | 0 |
 
 ---
 
@@ -66,7 +66,7 @@ The active parameters configured in [appData.js](file:///d:/OneDrive/AWS_Sports_
 | **Stage 2** | `0.8` | 16 seconds (11s clip + 5s grace) | 80 | **60** |
 | **Stage 3** | `0.6` | 20 seconds (15s clip + 5s grace) | 60 | **40** |
 | **Stage 4** | `0.4` | 8 seconds (3s cue + 5s grace) | 40 | **20** |
-| **Stage 5** | `0.2` | 8 seconds (3s cue + 5s grace) | 20 | **10** |
+| **Stage 5** | `0.2` | 8 seconds (3s cue + 5s grace) | 20 | **0** |
 
 *Note: Stage Duration includes the segment playback time plus the 5-second answer grace window.*
 

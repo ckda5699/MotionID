@@ -8,20 +8,20 @@
     "highlightVideo": "highlights/Bayern_Hamburg_goal_01.mp4"
   },
   {
-    "sourceKey": "Bayern_Hamburg_goal_02",
-    "match": "Bayern vs Hamburg",
-    "title": "Goal 2",
-    "playerName": "Aleksandar Pavlovic",
-    "goalVideo": "goals/Bayern_Hamburg_goal_02.mp4",
-    "highlightVideo": "highlights/Bayern_Hamburg_goal_02.mp4"
+    "sourceKey": "Dortmund_Stuttgart_goal_01",
+    "match": "Dortmund vs Stuttgart",
+    "title": "Goal 1",
+    "playerName": "Maximilian Beier",
+    "goalVideo": "goals/Dortmund_Stuttgart_goal_01.mp4",
+    "highlightVideo": "highlights/Dortmund_Stuttgart_goal_01.mp4"
   },
   {
-    "sourceKey": "Frankfurt_Bayern_goal_01",
-    "match": "Frankfurt vs Bayern",
+    "sourceKey": "Frankfurt_Union_goal_01",
+    "match": "Frankfurt vs Union",
     "title": "Goal 1",
-    "playerName": "Luis Diaz",
-    "goalVideo": "goals/Frankfurt_Bayern_goal_01.mp4",
-    "highlightVideo": "highlights/Frankfurt_Bayern_goal_01.mp4"
+    "playerName": "Ilyas Ansah",
+    "goalVideo": "goals/Frankfurt_Union_goal_01.mp4",
+    "highlightVideo": "highlights/Frankfurt_Union_goal_01.mp4"
   },
   {
     "sourceKey": "Frankfurt_Bayern_goal_03",

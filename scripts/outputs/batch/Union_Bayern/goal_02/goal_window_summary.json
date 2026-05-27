@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Union_Bayern::18909300000595",
+    "match_name": "Union_Bayern",
+    "event_id": "18909300000595",
+    "team_id": "DFL-CLU-00000G",
+    "team_name": "FC Bayern M\u00fcnchen",
+    "team_code": 0,
+    "player_id": "DFL-OBJ-J01DA7",
+    "player_name": "Luis D\u00edaz",
+    "player_position": "OLM",
+    "shirt_number": 14,
+    "section": "firstHalf",
+    "goal_frame": 66132,
+    "game_time": "037:25:28",
+    "x": -52.09,
+    "y": -12.24,
+    "xg": 0.0605,
+    "pressure_on_player": 0.07,
+    "distance_to_goal": 12.35,
+    "angle_to_goal": 1.33,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 10,
+    "num_attacking_players_in_box": 6
+  },
+  "window": {
+    "goal_key": "Union_Bayern::18909300000595",
+    "window_start_frame": 65882,
+    "window_end_frame": 66257,
+    "goal_frame": 66132,
+    "absolute_start_frame": 2902329,
+    "absolute_end_frame": 2903079,
+    "absolute_goal_frame": 2902829
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 20867
+}

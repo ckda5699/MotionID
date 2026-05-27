@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Frankfurt_Union::18903400000103",
+    "match_name": "Frankfurt_Union",
+    "event_id": "18903400000103",
+    "team_id": "DFL-CLU-00000V",
+    "team_name": "1. FC Union Berlin",
+    "team_code": 0,
+    "player_id": "DFL-OBJ-J01WS3",
+    "player_name": "I. Ansah",
+    "player_position": "OHL",
+    "shirt_number": 10,
+    "section": "firstHalf",
+    "goal_frame": 22305,
+    "game_time": "008:12:19",
+    "x": 29.25,
+    "y": -11.05,
+    "xg": 0.03,
+    "pressure_on_player": 0.28,
+    "distance_to_goal": 25.73,
+    "angle_to_goal": 14.7,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 1,
+    "num_attacking_players_in_box": 0
+  },
+  "window": {
+    "goal_key": "Frankfurt_Union::18903400000103",
+    "window_start_frame": 22055,
+    "window_end_frame": 22430,
+    "goal_frame": 22305,
+    "absolute_start_frame": 2814267,
+    "absolute_end_frame": 2815017,
+    "absolute_goal_frame": 2814767
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 20194
+}

@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Bayern_Hamburg::18902400001163",
+    "match_name": "Bayern_Hamburg",
+    "event_id": "18902400001163",
+    "team_id": "DFL-CLU-00000G",
+    "team_name": "FC Bayern M\u00fcnchen",
+    "team_code": 1,
+    "player_id": "DFL-OBJ-J00ZZ3",
+    "player_name": "Harry Kane",
+    "player_position": "STZ",
+    "shirt_number": 9,
+    "section": "secondHalf",
+    "goal_frame": 124418,
+    "game_time": "061:16:67",
+    "x": 40.9,
+    "y": -4.76,
+    "xg": 0.1166,
+    "pressure_on_player": 0.68,
+    "distance_to_goal": 12.53,
+    "angle_to_goal": 30.64,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 7,
+    "num_attacking_players_in_box": 4
+  },
+  "window": {
+    "goal_key": "Bayern_Hamburg::18902400001163",
+    "window_start_frame": 124168,
+    "window_end_frame": 124543,
+    "goal_frame": 124418,
+    "absolute_start_frame": 3584718,
+    "absolute_end_frame": 3585468,
+    "absolute_goal_frame": 3585218
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 21779
+}

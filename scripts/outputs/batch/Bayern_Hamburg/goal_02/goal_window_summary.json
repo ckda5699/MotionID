@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Bayern_Hamburg::18902400000172",
+    "match_name": "Bayern_Hamburg",
+    "event_id": "18902400000172",
+    "team_id": "DFL-CLU-00000G",
+    "team_name": "FC Bayern M\u00fcnchen",
+    "team_code": 1,
+    "player_id": "DFL-OBJ-J01KAH",
+    "player_name": "A. Pavlovi\u0107",
+    "player_position": "DML",
+    "shirt_number": 45,
+    "section": "firstHalf",
+    "goal_frame": 23248,
+    "game_time": "008:49:87",
+    "x": -45.63,
+    "y": 7.98,
+    "xg": 0.2268,
+    "pressure_on_player": 0.71,
+    "distance_to_goal": 10.73,
+    "angle_to_goal": 27.12,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 8,
+    "num_attacking_players_in_box": 5
+  },
+  "window": {
+    "goal_key": "Bayern_Hamburg::18902400000172",
+    "window_start_frame": 22998,
+    "window_end_frame": 23373,
+    "goal_frame": 23248,
+    "absolute_start_frame": 3356848,
+    "absolute_end_frame": 3357598,
+    "absolute_goal_frame": 3357348
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 20260
+}

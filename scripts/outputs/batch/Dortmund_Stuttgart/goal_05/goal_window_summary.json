@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Dortmund_Stuttgart::18909700001498",
+    "match_name": "Dortmund_Stuttgart",
+    "event_id": "18909700001498",
+    "team_id": "DFL-CLU-00000D",
+    "team_name": "VfB Stuttgart",
+    "team_code": 0,
+    "player_id": "DFL-OBJ-0027YK",
+    "player_name": "D. Undav",
+    "player_position": "STZ",
+    "shirt_number": 26,
+    "section": "secondHalf",
+    "goal_frame": 168112,
+    "game_time": "090:24:47",
+    "x": 40.07,
+    "y": 0.49,
+    "xg": 0.0412,
+    "pressure_on_player": 0.87,
+    "distance_to_goal": 12.43,
+    "angle_to_goal": 32.79,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 9,
+    "num_attacking_players_in_box": 3
+  },
+  "window": {
+    "goal_key": "Dortmund_Stuttgart::18909700001498",
+    "window_start_frame": 167862,
+    "window_end_frame": 168237,
+    "goal_frame": 168112,
+    "absolute_start_frame": 3119805,
+    "absolute_end_frame": 3120555,
+    "absolute_goal_frame": 3120305
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 19298
+}

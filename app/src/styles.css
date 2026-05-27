@@ -3494,6 +3494,57 @@ button {
   border: 1px solid rgba(255, 255, 255, .11);
   border-radius: 10px;
   padding: 28px 9px 9px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.session-row:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.session-row:active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.session-thumb-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.session-player-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.session-player-name {
+  color: #fff !important;
+  font-family: var(--ui);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.session-player-team {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-family: var(--ui);
+  font-size: 8px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 1px;
 }
 
 .session-row>b {
@@ -3558,6 +3609,33 @@ button {
   margin-right: 8px;
   color: #fff;
   font-variant-numeric: tabular-nums;
+}
+
+.back-to-results-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.back-to-results-cta .icon {
+  transform: rotate(180deg);
+  order: -1;
+}
+
+.session-row::after {
+  content: "\203A";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 20px;
+  font-weight: 300;
+  transition: color 0.2s ease;
+  pointer-events: none;
+}
+.session-row:hover::after {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .leaderboard-teaser {
@@ -3671,14 +3749,13 @@ button {
 }
 
 .rank-jump-splitter {
-  min-height: 30px;
+  min-height: 24px;
   display: grid;
   place-items: center;
-  color: var(--dim);
-  border-bottom: 1px dashed rgba(255, 255, 255, .16);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  line-height: 1;
 }
 
 .avatar-dot {

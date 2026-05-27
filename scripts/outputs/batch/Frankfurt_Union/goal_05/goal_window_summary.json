@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Frankfurt_Union::18903400000940",
+    "match_name": "Frankfurt_Union",
+    "event_id": "18903400000940",
+    "team_id": "DFL-CLU-00000V",
+    "team_name": "1. FC Union Berlin",
+    "team_code": 0,
+    "player_id": "DFL-OBJ-0027FW",
+    "player_name": "Oliver Burke",
+    "player_position": "OHR",
+    "shirt_number": 7,
+    "section": "secondHalf",
+    "goal_frame": 115531,
+    "game_time": "055:21:23",
+    "x": -38.86,
+    "y": -0.41,
+    "xg": 0.4305,
+    "pressure_on_player": 0.39,
+    "distance_to_goal": 13.93,
+    "angle_to_goal": 29.43,
+    "num_defenders_in_shot_lane": 0,
+    "num_defending_players_in_box": 1,
+    "num_attacking_players_in_box": 1
+  },
+  "window": {
+    "goal_key": "Frankfurt_Union::18903400000940",
+    "window_start_frame": 115281,
+    "window_end_frame": 115656,
+    "goal_frame": 115531,
+    "absolute_start_frame": 3019358,
+    "absolute_end_frame": 3020108,
+    "absolute_goal_frame": 3019858
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 21779
+}

@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Dortmund_Stuttgart::18909700001486",
+    "match_name": "Dortmund_Stuttgart",
+    "event_id": "18909700001486",
+    "team_id": "DFL-CLU-000007",
+    "team_name": "Borussia Dortmund",
+    "team_code": 1,
+    "player_id": "DFL-OBJ-J01E9X",
+    "player_name": "Karim Adeyemi",
+    "player_position": "OHR",
+    "shirt_number": 27,
+    "section": "secondHalf",
+    "goal_frame": 165118,
+    "game_time": "088:24:71",
+    "x": -42.97,
+    "y": -1.03,
+    "xg": 0.2931,
+    "pressure_on_player": 0.82,
+    "distance_to_goal": 9.66,
+    "angle_to_goal": 41.34,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 4,
+    "num_attacking_players_in_box": 4
+  },
+  "window": {
+    "goal_key": "Dortmund_Stuttgart::18909700001486",
+    "window_start_frame": 164868,
+    "window_end_frame": 165243,
+    "goal_frame": 165118,
+    "absolute_start_frame": 3113817,
+    "absolute_end_frame": 3114567,
+    "absolute_goal_frame": 3114317
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 21779
+}

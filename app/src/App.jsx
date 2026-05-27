@@ -21,6 +21,9 @@ const screenMap = {
   profile: "profile",
 };
 
+// Set to true to re-enable the dev QA sidebar and Agentation toolbar during development
+const SHOW_DEV_TOOLS = false;
+
 const qaScreens = [
   ["home", "Home"],
   ["lobby", "Lobby"],
@@ -48,23 +51,25 @@ function initialStage() {
   return 1;
 }
 
-function demoGameIndexes() {
-  return games
-    .map((game, index) => localDemoSourceKeys.includes(game.sourceKey) ? index : -1)
-    .filter((index) => index >= 0);
-}
+const bayernKeys = ["Union_Bayern_goal_04", "Bayern_Hamburg_goal_01", "Frankfurt_Bayern_goal_03"];
+const otherKeys = ["Dortmund_Stuttgart_goal_01", "Frankfurt_Union_goal_01"];
 
-function randomDemoGameIndex() {
-  const indexes = demoGameIndexes();
-  if (!indexes.length) return 0;
-  return indexes[Math.floor(Math.random() * indexes.length)];
-}
+function generateSessionQueue() {
+  const bayernIndexes = [];
+  const otherIndexes = [];
 
-function nextDemoGameIndex(currentIndex) {
-  const indexes = demoGameIndexes();
-  const position = indexes.indexOf(currentIndex);
-  if (position === -1) return indexes[0] ?? 0;
-  return indexes[(position + 1) % indexes.length];
+  games.forEach((game, index) => {
+    if (bayernKeys.includes(game.sourceKey)) {
+      bayernIndexes.push(index);
+    } else if (otherKeys.includes(game.sourceKey)) {
+      otherIndexes.push(index);
+    }
+  });
+
+  const shuffledBayern = [...bayernIndexes].sort(() => Math.random() - 0.5);
+  const chosenBayern = shuffledBayern.slice(0, 2);
+  const combined = [...chosenBayern, ...otherIndexes];
+  return combined.sort(() => Math.random() - 0.5);
 }
 
 function activeTabFor(screen) {
@@ -80,7 +85,9 @@ function activeTabFor(screen) {
 export function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [currentScreen, setCurrentScreen] = useState(initialScreen);
-  const [currentGameIndex, setCurrentGameIndex] = useState(randomDemoGameIndex);
+  const [sessionQueue, setSessionQueue] = useState(() => generateSessionQueue());
+  const [currentQueueIndex, setCurrentQueueIndex] = useState(0);
+  const currentGameIndex = sessionQueue[currentQueueIndex] ?? 0;
   const [activeStage, setActiveStage] = useState(initialStage);
   const [lockedResult, setLockedResult] = useState(() => {
     const params = new URLSearchParams(window.location.search);
@@ -92,7 +99,10 @@ export function App() {
   const [sessionResults, setSessionResults] = useState([]);
   const [comingSoonMode, setComingSoonMode] = useState(null);
   const [showQuitConfirm, setShowQuitConfirm] = useState(false);
+  const [reviewMode, setReviewMode] = useState(false);
   const [selectedFixtureDate, setSelectedFixtureDate] = useState(null);
+  const [userMatchdayScore, setUserMatchdayScore] = useState(0);
+  const [userMatchdayGames, setUserMatchdayGames] = useState(0);
 
   const currentGame = games[currentGameIndex] ?? games[0];
   const selectedMode = modes.find((mode) => mode.id === currentGame.modeId) ?? modes[0];
@@ -111,8 +121,8 @@ export function App() {
   }, [currentGame]);
 
   useEffect(() => {
-    saveProgress({ currentScreen, currentGameIndex, activeStage, lockedResult, lastResult, sessionResults });
-  }, [currentScreen, currentGameIndex, activeStage, lockedResult, lastResult, sessionResults]);
+    saveProgress({ currentScreen, currentGameIndex, activeStage, lockedResult, lastResult, sessionResults, userMatchdayScore, userMatchdayGames });
+  }, [currentScreen, currentGameIndex, activeStage, lockedResult, lastResult, sessionResults, userMatchdayScore, userMatchdayGames]);
 
   const navigate = (target) => {
     if (target === "Home") setCurrentScreen("home");
@@ -137,7 +147,15 @@ export function App() {
       setCurrentScreen("comingSoon");
       return;
     }
-    setCurrentGameIndex(modeId === "goals" ? currentGameIndex : Math.max(0, games.findIndex((game) => game.modeId === modeId)));
+    if (modeId === "goals") {
+      const newQueue = generateSessionQueue();
+      setSessionQueue(newQueue);
+      setCurrentQueueIndex(0);
+    } else {
+      const targetIndex = Math.max(0, games.findIndex((game) => game.modeId === modeId));
+      setSessionQueue([targetIndex]);
+      setCurrentQueueIndex(0);
+    }
     setActiveStage(1);
     setLockedResult(null);
     setCurrentScreen("quiz");
@@ -167,17 +185,19 @@ export function App() {
     setLockedResult(datedResult);
     setLastResult(datedResult);
     persistResult(datedResult);
+    setUserMatchdayScore((prev) => prev + (result.pointsEarned ?? 0));
+    setUserMatchdayGames((prev) => prev + 1);
+    setReviewMode(false);
     setCurrentScreen("reveal");
   };
 
   const nextGame = () => {
     if (lastResult) persistResult(lastResult);
-    const nextIndex = nextDemoGameIndex(currentGameIndex);
     if (sessionResults.length >= 4) {
       setCurrentScreen("results");
       return;
     }
-    setCurrentGameIndex(nextIndex);
+    setCurrentQueueIndex((prev) => prev + 1);
     setActiveStage(1);
     setLockedResult(null);
     setCurrentScreen("quiz");
@@ -185,11 +205,15 @@ export function App() {
 
   const playAgain = () => {
     clearProgress();
-    setCurrentGameIndex(randomDemoGameIndex());
+    const newQueue = generateSessionQueue();
+    setSessionQueue(newQueue);
+    setCurrentQueueIndex(0);
     setActiveStage(1);
     setLockedResult(null);
     setLastResult(sampleResults[0]);
     setSessionResults([]);
+    setUserMatchdayScore(0);
+    setUserMatchdayGames(0);
     setCurrentScreen("lobby");
   };
 
@@ -208,10 +232,30 @@ export function App() {
     if (currentScreen === "lobby") return <LobbyScreen selectedMode={selectedMode} onPlay={startMode} />;
     if (currentScreen === "liveCountdown") return <LiveChallengeCountdownScreen onBack={() => setCurrentScreen("lobby")} onPlayNow={() => startMode("goals")} />;
     if (currentScreen === "quiz") return <QuizScreen game={currentGame} onQuit={requestQuitGame} onComplete={(result) => { setActiveStage(1); completeRound(result); }} />;
-    if (currentScreen === "reveal") return <RevealScreen game={currentGame} result={lastResult} isLast={sessionResults.length >= 4} onNext={nextGame} />;
+    if (currentScreen === "reveal") return <RevealScreen game={currentGame} result={lastResult} isLast={sessionResults.length >= 4} onNext={nextGame} reviewMode={reviewMode} onBackToResults={() => { setReviewMode(false); setCurrentScreen("results"); }} />;
     if (currentScreen === "insight") return <InsightScreen onBack={() => setCurrentScreen("reveal")} />;
-    if (currentScreen === "results") return <ResultsScreen results={sessionResults} onInsight={() => setCurrentScreen("insight")} onPlayAgain={playAgain} onLeaderboard={() => setCurrentScreen("leaderboard")} />;
-    if (currentScreen === "leaderboard") return <LeaderboardScreen />;
+    if (currentScreen === "results") return (
+      <ResultsScreen
+        results={sessionResults}
+        userScore={userMatchdayScore}
+        onInsight={() => setCurrentScreen("insight")}
+        onPlayAgain={playAgain}
+        onLeaderboard={() => setCurrentScreen("leaderboard")}
+        onViewReveal={(gameId, result) => {
+          const gameIndex = games.findIndex((game) => game.id === gameId);
+          if (gameIndex >= 0) {
+            const queuePos = sessionQueue.indexOf(gameIndex);
+            if (queuePos >= 0) {
+              setCurrentQueueIndex(queuePos);
+            }
+            setLastResult(result);
+            setReviewMode(true);
+            setCurrentScreen("reveal");
+          }
+        }}
+      />
+    );
+    if (currentScreen === "leaderboard") return <LeaderboardScreen userScore={userMatchdayScore} userGames={userMatchdayGames} />;
     if (currentScreen === "news") return <NewsScreen />;
     if (currentScreen === "matches") return <MatchesScreen selectedDate={selectedFixtureDate} onSelectDate={setSelectedFixtureDate} onClearDate={() => setSelectedFixtureDate(null)} />;
     if (currentScreen === "stats") return <StatsScreen />;
@@ -222,8 +266,8 @@ export function App() {
   return (
     <>
       {showSplash ? <StartupSplash /> : null}
-      <main className={import.meta.env.DEV ? "app-lab-shell app-lab-shell-dev" : "app-lab-shell"} aria-label="Bundesliga Motion ID prototype">
-        {import.meta.env.DEV ? (
+      <main className={SHOW_DEV_TOOLS && import.meta.env.DEV ? "app-lab-shell app-lab-shell-dev" : "app-lab-shell"} aria-label="Bundesliga Motion ID prototype">
+        {SHOW_DEV_TOOLS && import.meta.env.DEV ? (
           <aside className="dev-switcher" aria-label="Motion ID QA screen switcher">
             <h2>Motion ID QA</h2>
             {qaScreens.map(([screen, label]) => (
@@ -257,7 +301,7 @@ export function App() {
           </article>
         </div>
       ) : null}
-      <AgentationDevTool />
+      {SHOW_DEV_TOOLS ? <AgentationDevTool /> : null}
     </>
   );
 }

@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["icons/motion-id-icon.svg"],
+      includeAssets: ["icons/app-logo.png"],
       manifest: {
         name: "Bundesliga Motion ID",
         short_name: "Motion ID",
@@ -24,9 +24,9 @@ export default defineConfig({
         theme_color: "#050505",
         icons: [
           {
-            src: "/icons/motion-id-icon.svg",
-            sizes: "any",
-            type: "image/svg+xml",
+            src: "/icons/app-logo.png",
+            sizes: "512x512",
+            type: "image/png",
             purpose: "any maskable",
           },
         ],

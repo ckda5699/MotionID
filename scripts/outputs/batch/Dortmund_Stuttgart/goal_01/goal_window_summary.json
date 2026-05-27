@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Dortmund_Stuttgart::18909700000678",
+    "match_name": "Dortmund_Stuttgart",
+    "event_id": "18909700000678",
+    "team_id": "DFL-CLU-000007",
+    "team_name": "Borussia Dortmund",
+    "team_code": 1,
+    "player_id": "DFL-OBJ-002G7P",
+    "player_name": "M. Beier",
+    "player_position": "DLM",
+    "shirt_number": 14,
+    "section": "firstHalf",
+    "goal_frame": 71407,
+    "game_time": "040:56:28",
+    "x": 49.04,
+    "y": -1.94,
+    "xg": 0.9725,
+    "pressure_on_player": 0.8,
+    "distance_to_goal": 3.99,
+    "angle_to_goal": 84.46,
+    "num_defenders_in_shot_lane": 1,
+    "num_defending_players_in_box": 7,
+    "num_attacking_players_in_box": 3
+  },
+  "window": {
+    "goal_key": "Dortmund_Stuttgart::18909700000678",
+    "window_start_frame": 71157,
+    "window_end_frame": 71532,
+    "goal_frame": 71407,
+    "absolute_start_frame": 2912427,
+    "absolute_end_frame": 2913177,
+    "absolute_goal_frame": 2912927
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 20649
+}

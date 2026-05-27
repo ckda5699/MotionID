@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { games, leaderboardTabs, localHighlightVideos, matchRows, modes, movementMetrics, players, stages, user } from "../data/appData.js";
+import { games, leaderboardTabs, localHighlightVideos, matchRows, modes, movementMetrics, players, stages, user, weeklyRows } from "../data/appData.js";
 import { clubNewsGoalCards, topStoryCards } from "../data/newsGoalsData.js";
 import { bundesligaClubs, bundesligaPlayers, bundesligaTable } from "../data/tableStatsData.js";
 import { calculateStageScore, findPlayerByName, normalizeName, scoreRound } from "../lib/scoring.js";
@@ -96,7 +96,9 @@ function cleanText(value) {
     .replaceAll("dÃ­az", "díaz")
     .replaceAll("MÃ¼nchen", "München")
     .replaceAll("PavloviÄ‡", "Pavlovic")
-    .replaceAll("pavloviÄ‡", "pavlovic");
+    .replaceAll("pavloviÄ‡", "pavlovic")
+    .replace(/^1\.\s*FC Union Berlin$/i, "FC Union Berlin")
+    .replace("1. FC Union Berlin", "FC Union Berlin");
 }
 
 function playerLabel(player) {
@@ -861,20 +863,22 @@ function CuePanel({ stage, game }) {
   );
 }
 
-export function RevealScreen({ game, result, isLast, onNext }) {
+export function RevealScreen({ game, result, isLast, onNext, reviewMode = false, onBackToResults }) {
   const player = findPlayerByName(result?.correctAnswer ?? game.playerName) ?? players[0];
   const [nextSeconds, setNextSeconds] = useState(30);
   const autoStartedRef = useRef(false);
 
   useEffect(() => {
+    if (reviewMode) return;
     const tick = window.setInterval(() => setNextSeconds((current) => Math.max(0, current - 1)), 1000);
     return () => window.clearInterval(tick);
-  }, []);
+  }, [reviewMode]);
 
   useEffect(() => {
+    if (reviewMode) return;
     if (nextSeconds > 0 || autoStartedRef.current) return;
     startNextQuiz();
-  }, [nextSeconds, onNext]);
+  }, [nextSeconds, onNext, reviewMode]);
 
   const startNextQuiz = () => {
     if (autoStartedRef.current) return;
@@ -896,10 +900,17 @@ export function RevealScreen({ game, result, isLast, onNext }) {
       <div className="media-pair"><ReplayThumb label="Motion ID Clip" game={game} /><ReplayThumb label="Match Highlight Video" game={game} highlight /></div>
       <div className="round-result-grid"><Stat label="Round" value={resultLabel} /><Stat label="Points" value={`+${result?.pointsEarned ?? 0}`} /><Stat label="Locked at" value={result?.submittedAnswer ? `Stage ${result?.answeredStage ?? 1}` : "No answer"} /></div>
       <div className="action-row single-action">
-        <button className="primary-cta" type="button" onClick={startNextQuiz}>
-          {isLast ? "Show results" : "Next Player Quiz starts"} in <span className="next-game-timer">00:{String(nextSeconds).padStart(2, "0")}</span>
-          <Icon name="arrow" />
-        </button>
+        {reviewMode ? (
+          <button className="primary-cta back-to-results-cta" type="button" onClick={onBackToResults}>
+            <Icon name="arrow" />
+            Back to Results
+          </button>
+        ) : (
+          <button className="primary-cta" type="button" onClick={startNextQuiz}>
+            {isLast ? "Show results" : "Next Player Quiz starts"} in <span className="next-game-timer">00:{String(nextSeconds).padStart(2, "0")}</span>
+            <Icon name="arrow" />
+          </button>
+        )}
       </div>
     </section>
   );
@@ -956,34 +967,63 @@ export function InsightScreen({ onBack }) {
   );
 }
 
-export function ResultsScreen({ results, onInsight, onPlayAgain, onLeaderboard }) {
+export function ResultsScreen({ results, userScore = 0, onInsight, onPlayAgain, onLeaderboard, onViewReveal }) {
   const rows = results;
   const total = rows.reduce((sum, item) => sum + item.pointsEarned, 0);
+  const scoreToCompare = userScore ?? total;
+  const rank = weeklyRows.filter(row => row.score > scoreToCompare).length + 1;
   return (
     <section className="screen-stack results-screen">
-      <article className="session-card compact-session"><Icon name="trophy" /><div><h1>Session complete</h1><p>{rows.length} games completed</p><strong>{total} <span>PTS</span></strong></div><aside><span>Top</span><b>14%</b><small>Today</small></aside></article>
-      <button className="rank-strip" type="button" onClick={onLeaderboard}>Leaderboard rank #2,184 <Icon name="arrow" /></button>
-      <div className="session-list">{rows.slice(0, 4).map((result, index) => <SessionGameRow key={`${result.gameId}-${index}`} result={result} index={index + 1} />)}</div>
+      <article className="session-card compact-session">
+        <Icon name="trophy" />
+        <div>
+          <h1>Session complete</h1>
+          <p>{rows.length} games completed</p>
+          <strong>{total} <span>PTS</span></strong>
+        </div>
+        <aside>
+          <span>Top</span>
+          <b>{Math.max(1, Math.round((rank / 9) * 100))}%</b>
+          <small>Today</small>
+        </aside>
+      </article>
+      <button className="rank-strip" type="button" onClick={onLeaderboard}>Leaderboard rank #{rank} <Icon name="arrow" /></button>
+      <div className="session-list">
+        {rows.slice(0, 4).map((result, index) => (
+          <SessionGameRow
+            key={`${result.gameId}-${index}`}
+            result={result}
+            index={index + 1}
+            onClick={() => onViewReveal && onViewReveal(result.gameId, result)}
+          />
+        ))}
+      </div>
       <div className="action-row"><button className="secondary-cta" type="button" onClick={onInsight}>Movement insight</button><button className="secondary-cta" type="button">Share</button><button className="primary-cta" type="button" onClick={onPlayAgain}>Play again</button></div>
     </section>
   );
 }
 
-function SessionGameRow({ result, index }) {
+function SessionGameRow({ result, index, onClick }) {
   const player = findPlayerByName(result.correctAnswer);
   const tablePlayer = player ? findTablePlayerByName(player.name) : null;
   const photoUrl = tablePlayer?.photoUrl ?? (player ? playerImageMap[player.name] : null);
   const visibleTitle = `Game ${index}`;
   return (
-    <article className="session-row">
+    <article className="session-row" onClick={onClick} style={{ cursor: "pointer" }}>
       <small className="session-date">{result.matchDate ?? "Matchday 34 - Sat 16 May 2026"}</small>
       <b>{index}</b>
-      <div className="session-thumb">
-        {photoUrl ? (
-          <img src={photoUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
-        ) : (
-          <MediaPoster tone={player?.portraitTone ?? "default"} title={visibleTitle} kicker="Motion ID" compact />
-        )}
+      <div className="session-thumb-wrap">
+        <div className="session-thumb">
+          {photoUrl ? (
+            <img src={photoUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+          ) : (
+            <MediaPoster tone={player?.portraitTone ?? "default"} title={visibleTitle} kicker="Motion ID" compact />
+          )}
+        </div>
+        <div className="session-player-meta">
+          <span className="session-player-name">{player?.displayName ?? player?.name ?? "Unknown"}</span>
+          <span className="session-player-team">{player?.team ? cleanText(player.team).replace("FC Bayern München", "FC Bayern") : "Unknown"}</span>
+        </div>
       </div>
       <div>
         <h3>{visibleTitle}</h3>
@@ -999,16 +1039,51 @@ function SessionGameRow({ result, index }) {
 function FragmentWithSplitter({ showSplitter, children }) {
   return (
     <>
-      {showSplitter ? <div className="rank-jump-splitter">Placeholder rank jump</div> : null}
+      {showSplitter ? <div className="rank-jump-splitter"><span>⋮</span></div> : null}
       {children}
     </>
   );
 }
 
-export function LeaderboardScreen() {
+export function LeaderboardScreen({ userScore = 0, userGames = 0 }) {
   const visibleTabs = ["All Time", "Matchday", "Friends"];
   const [activeTab, setActiveTab] = useState("Matchday");
-  const tab = leaderboardTabs[activeTab] ?? leaderboardTabs.Matchday;
+  
+  const tab = useMemo(() => {
+    if (activeTab !== "Matchday") {
+      return leaderboardTabs[activeTab] ?? leaderboardTabs.Matchday;
+    }
+    
+    // Construct Matchday dynamically with user score and correct ranks
+    const baseRows = weeklyRows.filter(row => row.player !== "BayernFan23");
+    const userRow = {
+      player: "BayernFan23",
+      score: userScore,
+      streak: userGames,
+      current: true
+    };
+    
+    const allRows = [...baseRows, userRow].sort((a, b) => b.score - a.score);
+    const rankedRows = allRows.map((row, idx) => ({
+      ...row,
+      rank: idx + 1,
+      stageAvg: `+${Math.round(row.score / Math.max(1, row.streak))}`
+    }));
+    
+    const userRanked = rankedRows.find(row => row.player === "BayernFan23");
+    
+    return {
+      label: "Matchday rankings",
+      summary: {
+        rank: `#${userRanked?.rank ?? rankedRows.length}`,
+        score: String(userScore),
+        streak: userGames,
+        avg: String(Math.round(userScore / Math.max(1, userGames)))
+      },
+      rows: rankedRows
+    };
+  }, [activeTab, userScore, userGames]);
+
   return (
     <section className="screen-stack leaderboard-screen">
       <div className="leader-head simple"><MotionIdLogo compact /></div>
@@ -1018,14 +1093,23 @@ export function LeaderboardScreen() {
           <button type="button" className={name === activeTab ? "active" : ""} key={name} onClick={() => setActiveTab(name)}>{name}</button>
         ))}
       </div>
-      <div className="leader-stats"><Stat label="Rank" value={tab.summary.rank} /><Stat label="Score" value={tab.summary.score} /><Stat label="Streak" value={tab.summary.streak} /><Stat label="Avg" value={tab.summary.avg} /></div>
+      <div className="leader-stats">
+        <Stat label="Rank" value={tab.summary.rank} />
+        <Stat label="Score" value={tab.summary.score} />
+        <Stat label="Streak" value={tab.summary.streak} />
+        <Stat label="Avg" value={tab.summary.avg} />
+      </div>
       <div className="leader-table">
         <div className="leader-row leader-header"><b>Rank</b><strong>Player</strong><span>Points</span><span>Games</span><span>Avg</span></div>
-        {tab.rows.map((row, index) => (
-          <FragmentWithSplitter key={`${activeTab}-${row.rank}-${row.player}`} showSplitter={index === 5}>
-            <div className={row.current ? "leader-row current" : "leader-row"}><b>{row.rank}</b><strong>{row.player}</strong><span>{row.score}</span><span>{row.streak}</span><span>{Math.round(row.score / Math.max(1, row.streak))}</span></div>
-          </FragmentWithSplitter>
-        ))}
+        {tab.rows.map((row, index) => {
+          const prevRank = index > 0 ? tab.rows[index - 1].rank : row.rank - 1;
+          const hasRankJump = row.rank - prevRank > 1;
+          return (
+            <FragmentWithSplitter key={`${activeTab}-${row.rank}-${row.player}`} showSplitter={hasRankJump}>
+              <div className={row.current ? "leader-row current" : "leader-row"}><b>{row.rank}</b><strong>{row.player}</strong><span>{row.score}</span><span>{row.streak}</span><span>{Math.round(row.score / Math.max(1, row.streak))}</span></div>
+            </FragmentWithSplitter>
+          );
+        })}
       </div>
       {activeTab !== "Friends" ? <div className="qualification-note"><Icon name="trophy" /><span>Top 100 advance to the Motion ID Elite Board. Leaderboard resets in 2d 6h.</span></div> : null}
     </section>

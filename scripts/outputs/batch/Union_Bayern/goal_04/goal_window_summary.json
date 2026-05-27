@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Union_Bayern::18909300001561",
+    "match_name": "Union_Bayern",
+    "event_id": "18909300001561",
+    "team_id": "DFL-CLU-00000G",
+    "team_name": "FC Bayern M\u00fcnchen",
+    "team_code": 0,
+    "player_id": "DFL-OBJ-J00ZZ3",
+    "player_name": "Harry Kane",
+    "player_position": "STZ",
+    "shirt_number": 9,
+    "section": "secondHalf",
+    "goal_frame": 171087,
+    "game_time": "092:23:47",
+    "x": 45.55,
+    "y": 1.31,
+    "xg": 0.34,
+    "pressure_on_player": 0.39,
+    "distance_to_goal": 7.23,
+    "angle_to_goal": 53.31,
+    "num_defenders_in_shot_lane": 0,
+    "num_defending_players_in_box": 7,
+    "num_attacking_players_in_box": 5
+  },
+  "window": {
+    "goal_key": "Union_Bayern::18909300001561",
+    "window_start_frame": 170837,
+    "window_end_frame": 171212,
+    "goal_frame": 171087,
+    "absolute_start_frame": 3131191,
+    "absolute_end_frame": 3131941,
+    "absolute_goal_frame": 3131691
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 19541
+}

@@ -1,0 +1,38 @@
+{
+  "goal": {
+    "goal_key": "Bayern_Hamburg::18902400000048",
+    "match_name": "Bayern_Hamburg",
+    "event_id": "18902400000048",
+    "team_id": "DFL-CLU-00000G",
+    "team_name": "FC Bayern M\u00fcnchen",
+    "team_code": 1,
+    "player_id": "DFL-OBJ-0027G6",
+    "player_name": "Serge Gnabry",
+    "player_position": "ZO",
+    "shirt_number": 7,
+    "section": "firstHalf",
+    "goal_frame": 13989,
+    "game_time": "002:39:52",
+    "x": -45.07,
+    "y": 17.16,
+    "xg": 0.0308,
+    "pressure_on_player": 0.36,
+    "distance_to_goal": 18.77,
+    "angle_to_goal": 9.24,
+    "num_defenders_in_shot_lane": 0,
+    "num_defending_players_in_box": 9,
+    "num_attacking_players_in_box": 5
+  },
+  "window": {
+    "goal_key": "Bayern_Hamburg::18902400000048",
+    "window_start_frame": 13739,
+    "window_end_frame": 14114,
+    "goal_frame": 13989,
+    "absolute_start_frame": 3338330,
+    "absolute_end_frame": 3339080,
+    "absolute_goal_frame": 3338830
+  },
+  "positions_rows": 9776,
+  "shooter_frame_rows": 376,
+  "skeleton_rows": 20716
+}

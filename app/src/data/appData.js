@@ -15,7 +15,7 @@ export const stageFloors = {
   2: 60,
   3: 40,
   4: 20,
-  5: 10,
+  5: 0,
 };
 
 export const stages = [
@@ -291,15 +291,15 @@ function goalGame({ id, modeId = "goals", match, title, playerName, sourceKey, r
 
 export const games = [
   goalGame({ id: "Bayern_Hamburg_goal_01", match: "Bayern vs Hamburg", title: "Goal 1", playerName: "Serge Gnabry", sourceKey: "Bayern_Hamburg_goal_01" }),
-  goalGame({ id: "Bayern_Hamburg_goal_02", match: "Bayern vs Hamburg", title: "Goal 2", playerName: "Aleksandar Pavlovic", sourceKey: "Bayern_Hamburg_goal_02" }),
-  goalGame({ id: "Frankfurt_Bayern_goal_01", match: "Frankfurt vs Bayern", title: "Goal 1", playerName: "Luis Diaz", sourceKey: "Frankfurt_Bayern_goal_01" }),
-  goalGame({ id: "Bayern_Hamburg_goal_04", match: "Bayern vs Hamburg", title: "Goal 4", playerName: "Harry Kane", sourceKey: "Bayern_Hamburg_goal_04" }),
   goalGame({ id: "Dortmund_Stuttgart_goal_01", match: "Dortmund vs Stuttgart", title: "Goal 1", playerName: "Maximilian Beier", sourceKey: "Dortmund_Stuttgart_goal_01" }),
-  goalGame({ id: "Dortmund_Stuttgart_goal_04", match: "Dortmund vs Stuttgart", title: "Goal 4", playerName: "Karim Adeyemi", sourceKey: "Dortmund_Stuttgart_goal_04" }),
+  goalGame({ id: "Frankfurt_Union_goal_01", match: "Frankfurt vs Union", title: "Goal 1", playerName: "Ilyas Ansah", sourceKey: "Frankfurt_Union_goal_01" }),
   goalGame({ id: "Dortmund_Stuttgart_goal_05", match: "Dortmund vs Stuttgart", title: "Goal 5", playerName: "Deniz Undav", sourceKey: "Dortmund_Stuttgart_goal_05" }),
+  goalGame({ id: "Bayern_Hamburg_goal_02", match: "Bayern vs Hamburg", title: "Goal 2", playerName: "Maximilian Beier", sourceKey: "Bayern_Hamburg_goal_02" }),
+  goalGame({ id: "Frankfurt_Bayern_goal_01", match: "Frankfurt vs Bayern", title: "Goal 1", playerName: "Deniz Undav", sourceKey: "Frankfurt_Bayern_goal_01" }),
+  goalGame({ id: "Bayern_Hamburg_goal_04", match: "Bayern vs Hamburg", title: "Goal 4", playerName: "Harry Kane", sourceKey: "Bayern_Hamburg_goal_04" }),
+  goalGame({ id: "Dortmund_Stuttgart_goal_04", match: "Dortmund vs Stuttgart", title: "Goal 4", playerName: "Karim Adeyemi", sourceKey: "Dortmund_Stuttgart_goal_04" }),
   goalGame({ id: "Frankfurt_Bayern_goal_02", match: "Frankfurt vs Bayern", title: "Goal 2", playerName: "Harry Kane", sourceKey: "Frankfurt_Bayern_goal_02" }),
   goalGame({ id: "Frankfurt_Bayern_goal_03", match: "Frankfurt vs Bayern", title: "Goal 3", playerName: "Luis Diaz", sourceKey: "Frankfurt_Bayern_goal_03" }),
-  goalGame({ id: "Frankfurt_Union_goal_01", match: "Frankfurt vs Union", title: "Goal 1", playerName: "Ilyas Ansah", sourceKey: "Frankfurt_Union_goal_01" }),
   goalGame({ id: "Frankfurt_Union_goal_05", match: "Frankfurt vs Union", title: "Goal 5", playerName: "Oliver Burke", sourceKey: "Frankfurt_Union_goal_05" }),
   goalGame({ id: "Union_Bayern_goal_02", match: "Union vs Bayern", title: "Goal 2", playerName: "Luis Diaz", sourceKey: "Union_Bayern_goal_02" }),
   goalGame({ id: "Union_Bayern_goal_04", match: "Union vs Bayern", title: "Goal 4", playerName: "Harry Kane", sourceKey: "Union_Bayern_goal_04" }),
@@ -357,16 +357,15 @@ export const leaderboardRows = [
 
 const dailyRows = leaderboardRows;
 
-const weeklyRows = [
-  { rank: 1, player: "MotionKing", score: 1786, streak: 19, stageAvg: "+116" },
-  { rank: 2, player: "BundesIQ", score: 1714, streak: 16, stageAvg: "+109" },
-  { rank: 3, player: "GoalSpotter", score: 1689, streak: 15, stageAvg: "+103" },
-  { rank: 4, player: "MiaSanMia", score: 1642, streak: 14, stageAvg: "+97" },
-  { rank: 5, player: "SchwarzRotGold", score: 1588, streak: 13, stageAvg: "+94" },
-  { rank: 128, player: "BayernFan23", score: 286, streak: 7, stageAvg: "+57", current: true },
-  { rank: 129, player: "Alina_RBL", score: 285, streak: 7, stageAvg: "+56" },
-  { rank: 130, player: "Marcel_SGE", score: 283, streak: 7, stageAvg: "+55" },
-  { rank: 131, player: "Basti_FCA", score: 281, streak: 6, stageAvg: "+54" },
+export const weeklyRows = [
+  { player: "MotionKing", score: 382, streak: 4 },
+  { player: "BundesIQ", score: 355, streak: 4 },
+  { player: "GoalSpotter", score: 310, streak: 4 },
+  { player: "MiaSanMia", score: 275, streak: 3 },
+  { player: "SchwarzRotGold", score: 240, streak: 3 },
+  { player: "Alina_RBL", score: 195, streak: 3 },
+  { player: "Marcel_SGE", score: 180, streak: 3 },
+  { player: "Basti_FCA", score: 120, streak: 2 },
 ];
 
 const friendsRows = [
@@ -383,12 +382,12 @@ const allTimeRows = [
   { rank: 3, player: "GoalHunter27", score: 9112, streak: 36, stageAvg: "+112" },
   { rank: 4, player: "TaktikFuchs", score: 8740, streak: 34, stageAvg: "+108" },
   { rank: 5, player: "BL_MotionLab", score: 8526, streak: 31, stageAvg: "+104" },
-  { rank: 1284, player: "BayernFan23", score: 12450, streak: 7, stageAvg: "+57", current: true },
+  { rank: 1284, player: "BayernFan23", score: 286, streak: 7, stageAvg: "+41", current: true },
 ];
 
 export const leaderboardTabs = {
-  "All Time": { label: "All-time rankings", summary: { rank: "#1,284", score: "12,450", streak: 7, avg: "57" }, rows: allTimeRows },
-  Matchday: { label: "Matchday rankings", summary: { rank: "#128", score: "286", streak: 7, avg: "57" }, rows: weeklyRows },
+  "All Time": { label: "All-time rankings", summary: { rank: "#1,284", score: "286", streak: 7, avg: "41" }, rows: allTimeRows },
+  Matchday: { label: "Matchday rankings", summary: { rank: "#9", score: "0", streak: 0, avg: "0" }, rows: [] },
   Friends: { label: "Friends rankings", summary: { rank: "#3", score: "286", streak: 7, avg: "57" }, rows: friendsRows },
 };
 

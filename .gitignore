@@ -27,7 +27,8 @@ app/.env
 
 # ── Raw match data (20 GB parquet/XML — never committed) ─────────────────────
 /data/
-outputs/
+# outputs/
+
 
 # ── Logs ──────────────────────────────────────────────────────────────────────
 logs/
