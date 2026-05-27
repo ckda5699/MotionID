@@ -1,13 +1,16 @@
-# Bundesliga Motion ID - AWS Sports Hackathon
+# Bundesliga Motion ID - AWS DFL Sports Hackathon
 
 <p align="center">
   <img src="docs/assets/readme-cover.png" alt="Bundesliga Motion ID Banner" width="100%" />
 </p>
 
-<p align="center">
-  <h3><strong>Can fans recognize their favorite Bundesliga stars from 3D movement alone?</strong></h3>
-  <p>An interactive, mobile-first PWA quiz game that transforms raw tracking data into high-engagement fan mechanics, built for the <strong>AWS World Sports Innovation Cup 2026</strong>.</p>
-</p>
+<div align="center">
+
+### **Can fans recognize their favorite Bundesliga stars from 3D movement alone?**
+
+An interactive, mobile-first PWA quiz game that transforms raw tracking data into high-engagement fan mechanics, built for the <strong><a href="https://builder.aws.com/content/3BR0ILlG1SlZv07fXdwgPF1pxZ0/join-the-aws-world-sports-innovation-cup-transform-sports-with-your-innovation">AWS World Sports Innovation Cup 2026</a></strong>.
+
+</div>
 
 <p align="center">
   <img 
