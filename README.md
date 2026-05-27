@@ -100,7 +100,7 @@ By stripping away jersey numbers, player faces, team shirts, and broadcast video
 
 ### Why This Idea Wins:
 1. **The Recurring Matchday Cycle (Seasonal Fan Loop)**:
-   This is not a one-off trivia game. **Motion ID repeats every single matchday**. Synced with the live Bundesliga schedule, a new challenge pack drops 30 minutes before kick-off, challenging fans to identify the signature moments that happened on the pitch just hours before. It forms a recurring habit loop, bringing fans back week after week.
+   This is not a one-off trivia game. **Motion ID repeats every single matchday**. Synced with the live Bundesliga schedule, a new challenge pack drops 30 minutes before kick-off, challenging fans to identify the signature moments that happened on the pitch just days before. It forms a recurring habit loop, bringing fans back week after week.
 2. **Infinite Scalability (Beyond Bayern, Beyond Goals)**:
    While our stable prototype showcases Harry Kane, Serge Gnabry, and Luis Díaz, the production engine handles tracking parquets from **all 18 Bundesliga clubs**. Furthermore, the game is designed to expand beyond goals into:
    - **Elite Dribbles & Skills**: Spotting wingers by their stride rate and body orientation.
