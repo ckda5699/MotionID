@@ -28,8 +28,8 @@ Currently, the app is deployed as a static zip to AWS Amplify Hosting:
 Developer machine
   → npm run build (staging env vars)
   → Python zipfile → curl upload
-  → AWS Amplify Hosting (staging branch)
-  → https://staging.d2atp4d3qd2js3.amplifyapp.com
+  → AWS Amplify Hosting (prod branch)
+  → https://prod.d2atp4d3qd2js3.amplifyapp.com
 ```
 
 No backend is currently required.

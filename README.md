@@ -66,7 +66,7 @@ An interactive, mobile-first PWA quiz game that transforms raw tracking data int
 </table>
 
 <p align="center">
-  <a href="https://staging.d2atp4d3qd2js3.amplifyapp.com"><strong>Play the live game to test your skills on more players! ➡️</strong></a>
+  <a href="https://prod.d2atp4d3qd2js3.amplifyapp.com"><strong>Play the live game to test your skills on more players! ➡️</strong></a>
 </p>
 
 ---
@@ -81,10 +81,10 @@ An interactive, mobile-first PWA quiz game that transforms raw tracking data int
 
 > [!IMPORTANT]
 > **Jury Evaluation Note**
-> There is no need to clone, simulate, or run this repository locally to evaluate the solution. The fully functioning application is hosted live and can be accessed directly at the **[Staging URL](https://staging.d2atp4d3qd2js3.amplifyapp.com)**.
+> There is no need to clone, simulate, or run this repository locally to evaluate the solution. The fully functioning application is hosted live and can be accessed directly at the **[Production URL](https://prod.d2atp4d3qd2js3.amplifyapp.com)**.
 
 ### Quick Links
-* **Live Staging URL**: [https://staging.d2atp4d3qd2js3.amplifyapp.com](https://staging.d2atp4d3qd2js3.amplifyapp.com)
+* **Live Production URL**: [https://prod.d2atp4d3qd2js3.amplifyapp.com](https://prod.d2atp4d3qd2js3.amplifyapp.com)
 * **Game Mechanics & Scoring**: See the [Complete Game Mechanics & Scoring Specification](docs/game-mechanics.md)
 * **Detailed Local Setup**: See the [Local Setup Guide](docs/setup-guide.md)
 * **AWS Serverless Pipeline**: See the [Future AWS Production Spec](docs/future-aws-pipeline.md)
